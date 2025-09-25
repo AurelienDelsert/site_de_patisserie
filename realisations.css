@@ -48,22 +48,27 @@ body::after { right: 0; transform: scaleX(-1); }
 /* Conteneur du contenu avec fond */
 
 .content-background {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
   background-image: url("images/fond_site_lorie.jpeg");
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
-  padding: 20px 0;
+  padding: 0;
 }
 
 /* Contenu du site*/
 
 .main-wrapper {
+  flex: 1;
   max-width: 70vw;
   margin: 0 auto;
   display: flex;
   flex-direction: column;
-  min-height: 100vh;
   position: relative;
+  z-index: 2;
 }
 
 /* header du site*/
@@ -135,10 +140,8 @@ header .header-content {
 
 .main-content {
   flex: 1;
-  padding: 20px 0 0 0;
   display: flex;
   flex-direction: column;
-  min-height: 100vh;
 }
 
 .row {
@@ -277,12 +280,14 @@ header .header-content {
 footer {
   width: 70vw;
   width: 100%;
-  margin: 0 auto;
+  margin-top: auto;
   padding: 20px 0;
   color: white;
   background: linear-gradient(135deg, #f8c8dc, #d4a373);
   text-align: center;
   border-radius: 0;
+  position: relative;
+  z-index: 2;
 }
 
 .footer-container {
