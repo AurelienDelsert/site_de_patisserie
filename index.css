@@ -252,8 +252,36 @@ footer {
 }
 
 @media screen and (max-width: 600px) {
-  .nav { flex-direction: column; gap: 10px; }
-  body::before, body::after { display: none; }
-  #h1Header { font-size: clamp(24px, 8vw, 50px); }
+  .main-wrapper,
+  header .header-content {
+    width: 95vw;      /* plus large que 90vw pour remplir l’écran */
+  }
+
+  .main-content {
+    padding: 10px 0;  /* réduire le padding vertical */
+  }
+
+  .content-background {
+    padding: 10px 0;  /* réduire l’espace autour du contenu */
+  }
 }
+
+@media screen and (max-width: 600px) {
+  .row {
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .card {
+    width: 100%;       /* prend toute la largeur */
+    height: auto;      /* hauteur automatique selon le contenu */
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .overlay-title { font-size: 1.2rem; }
+  .overlay-desc { font-size: 0.9rem; }
+  .contact-form h2 { font-size: clamp(20px, 5vw, 30px); }
+}
+
 
