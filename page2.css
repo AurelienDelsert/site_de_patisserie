@@ -1,0 +1,363 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  height: 100%;
+  font-family: Arial, sans-serif;
+  background: #fff;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+/* ==================================
+   BANDES LATÉRALES
+================================== */
+body::before,
+body::after {
+  content: "";
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  width: 15vw;             /* bandes latérales */
+  background-image: url("images/fond_site_3.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  z-index: 1;
+}
+
+.main-wrapper, header .header-content {
+  width: 70vw;             /* correspond à 100% - 15vw gauche - 15vw droite */
+  max-width: 1000px;       /* pour grands écrans */
+  margin: 0;               /* plus de margin auto */
+  padding: 0;              /* pas de padding horizontal */
+  position: relative;
+  z-index: 2;
+}
+
+
+body::before { left: 0; }
+body::after { right: 0; transform: scaleX(-1); }
+
+/* Conteneur du contenu avec fond */
+
+ .content-background {
+  display: flex;
+  justify-content: center; /* centre horizontalement */
+  align-items: center;     /* centre verticalement */
+  min-height: 70vh;        /* assure une hauteur suffisante */
+  background-image: url("images/fond_site_lorie.jpeg");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  padding: 20px 0;
+}
+
+.main-wrapper {
+  max-width: 70vw;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  position: relative;
+}
+
+/* header du site*/
+
+header {
+  width: 100%;
+  padding: 20px 0;
+  background: linear-gradient(135deg, #f8c8dc, #d4a373);
+  z-index: 3;
+  box-sizing: border-box;
+}
+
+/* Conteneur central pour le contenu du header */
+
+header .header-content {
+  width: 70vw;         /* même largeur que le reste du site */
+  max-width: 1000px;   /* limite sur grands écrans */
+  margin: 0 auto;      /* centre horizontalement */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+/* Exemple : h1 et nav restent dans la zone centrale */
+#h1Header, header .nav {
+  width: 100%;
+}
+
+#h1Header {
+  font-family: 'Pacifico', cursive;
+  font-size: clamp(30px, 6vw, 70px);
+  background: linear-gradient(90deg, #f8a5c2, #d9885b); /* rose bonbon → caramel */
+  -webkit-background-clip: text;
+  color: #6b4226; /* marron chocolat */
+  text-shadow: 1px 1px 1px rgba(107, 66, 38, 0.5);
+  margin-bottom: 20px;
+}
+
+/* --- Navigation boutons --- */
+.nav {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  flex-wrap: wrap;
+  z-index: 3;
+}
+
+.nav .btn {
+  display: inline-block;
+  padding: 12px 25px;
+  border-radius: 30px;
+  font-weight: bold;
+  text-decoration: none;
+  color: #6b4226;
+  background: linear-gradient(135deg, #f8c8dc, #d4a373);
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+  transition: all 0.3s ease;
+}
+
+.nav .btn:hover {
+  background: linear-gradient(135deg, #d4a373, #f8c8dc);
+  transform: translateY(-3px);
+  box-shadow: 0 6px 15px rgba(0,0,0,0.3);
+}
+
+/* Contenu du site */
+
+.main-content {
+  flex: 1;
+  padding: 20px 0 0 0;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  justify-content: center; /* Centre horizontalement */
+  align-items: center; /* Centre verticalement */
+}
+
+/* La box avec effet pastel gourmand */
+.box {
+  width: 100%;            /* plus large */
+  max-width: 1000px;     /* laisse beaucoup de place */
+  min-height: 400px;
+  margin: 40px auto;     /* centré avec même marge à gauche/droite */
+  position: relative;
+  border-radius: 20px;
+  overflow: hidden;
+}
+
+/* Effet décoratif */
+.box::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  filter: drop-shadow(0 15px 50px #615a5a);
+  border-radius: 20px;
+  animation: rotating 4s linear infinite;
+  animation-delay: -1s;
+}
+
+.box::after {
+  content: "";
+  position: absolute;
+  inset: 4px;
+  background: linear-gradient(135deg, #f8c8dc, #ffe5d9); /* dégradé gourmand */
+  border-radius: 15px;
+  border: 6px solid #d4a373; /* rappel doré/pâtisserie */
+  z-index: 1;
+}
+
+/* Formulaire interne */
+.contact-form {
+  position: relative;
+  z-index: 2;
+  padding: 40px 50px;
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+  text-align: center;
+}
+
+
+/* Titre */
+.contact-form h2 {
+  font-family: 'Pacifico', cursive;
+  font-size: clamp(24px, 4vw, 36px);
+  color: #6b4226;
+  margin: 0 auto 10px auto; /* centré comme le reste */
+  line-height: 1.3;
+  text-align: center;
+}
+
+
+/* Groupe champs */
+.group {
+  position: relative;
+  width: 100%;
+  text-align: left;
+}
+
+.group input,
+.group textarea {
+  font-size: 16px;
+  padding: 12px 10px 10px 5px;
+  display: block;
+  width: 100%;
+  outline: none;
+  border: none;
+  border-bottom: 2px solid #6b4226;
+  background: transparent;
+  resize: none;
+  color: #333;
+}
+
+/* Labels flottants */
+.group label {
+  position: absolute;
+  left: 5px;
+  top: 12px;
+  color: #6b4226;
+  transition: 0.3s ease all;
+  pointer-events: none;
+  font-weight: bold;
+}
+
+.group input:focus ~ label,
+.group input:valid ~ label,
+.group textarea:focus ~ label,
+.group textarea:valid ~ label {
+  top: -18px;
+  font-size: 14px;
+  color: #7700ff;
+}
+
+/* Effet focus */
+.group input:focus,
+.group textarea:focus {
+  border-bottom: 2px solid #7700ff;
+}
+
+/* Bouton gourmand */
+.btn-submit {
+  align-self: center;
+  padding: 12px 40px;
+  border: none;
+  border-radius: 30px;
+  font-size: 16px;
+  font-weight: bold;
+  background: linear-gradient(135deg, #f8c8dc, #d4a373);
+  color: #6b4226;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+}
+
+.btn-submit:hover {
+  background: linear-gradient(135deg, #d4a373, #f8c8dc);
+  transform: translateY(-3px);
+  box-shadow: 0 6px 18px rgba(0,0,0,0.3);
+}
+
+
+input {
+  font-size: 16px;
+  padding: 10px 10px 10px 5px;
+  display: block;
+  width: 200px;
+  outline: none;
+  border: none;
+  border-bottom: 1px solid #515151;
+  background: transparent;
+}
+
+label {
+  position: absolute;
+  left: 5px;
+  top: 10px;
+}
+
+input:focus~label {
+  top: -20px;
+  font-size: 14px;
+  color: #7700ff
+}
+
+input:focus {
+  border-width: 2px;
+  border-bottom-color: #7700ff;
+}
+
+/* Footer du site*/
+
+footer {
+  width: 70vw;
+  width: 100%;
+  margin: 0 auto;
+  padding: 20px 0;
+  color: white;
+  background: linear-gradient(135deg, #f8c8dc, #d4a373);
+  text-align: center;
+  border-radius: 0;
+}
+
+.footer-container {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  gap: 30px;
+  max-width: 1200px;
+  margin: 0 auto;
+  text-align: left;
+}
+
+.footer-container h3, 
+.footer-container h4 {
+  margin-bottom: 15px;
+  font-family: "Arial Black", sans-serif;
+}
+
+.footer-about { flex: 1 1 250px; }
+.footer-links { flex: 1 1 150px; }
+.footer-contact { flex: 1 1 200px; }
+
+.footer-links ul { list-style: none; padding: 0; }
+.footer-links ul li { margin: 8px 0; }
+.footer-links a { color: white; text-decoration: none; transition: color 0.3s; }
+.footer-links a:hover { color: gold; }
+
+.footer-contact p { margin: 8px 0; font-size: 14px; }
+.socials a { font-size: 20px; margin-right: 10px; color: white; transition: color 0.3s; }
+.socials a:hover { color: gold; }
+
+.footer-bottom {
+  margin-top: 30px;
+  text-align: center;
+  font-size: 14px;
+  border-top: 1px solid rgba(255, 255, 255, 0.3);
+  padding-top: 15px;
+}
+
+/* ==================================
+   RESPONSIVE
+================================== */
+@media screen and (max-width: 900px) {
+  .main-wrapper { max-width: 90vw; }
+  body::before, body::after { width: 10vw; }
+}
+
+@media screen and (max-width: 600px) {
+  .nav { flex-direction: column; gap: 10px; }
+  body::before, body::after { display: none; }
+  #h1Header { font-size: clamp(24px, 8vw, 50px); }
+}
