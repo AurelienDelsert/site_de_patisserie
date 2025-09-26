@@ -165,13 +165,15 @@ footer {
 
 .footer-container {
   display: flex;
-  justify-content: space-around;
-  flex-wrap: wrap;
-  gap: 30px;
+  justify-content: space-between;  /* espace régulier entre les blocs */
+  align-items: flex-start;         /* tous alignés en haut */
+  flex-wrap: wrap;                 /* s’adapte sur mobile */
+  gap: 40px;
   max-width: 1200px;
   margin: 0 auto;
-  text-align: left;
+  padding: 0 20px;
 }
+
 
 .footer-about h3 {
   font-family: 'Pacifico', cursive;
@@ -224,6 +226,30 @@ footer {
   border-top: 1px solid rgba(0,0,0,0.1);
   padding-top: 15px;
 }
+
+.footer-about,
+.footer-links,
+.footer-contact {
+  flex: 1 1 300px;  /* largeur flexible mais minimum 300px */
+  min-width: 250px;
+}
+
+.footer-about {
+  text-align: left;
+}
+.footer-links,
+.footer-contact {
+  text-align: left;
+}
+
+@media (max-width: 768px) {
+  .footer-container {
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+  }
+}
+
 
 
 /* ==========================
