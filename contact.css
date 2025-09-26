@@ -260,7 +260,6 @@ header {
   background: linear-gradient(135deg, #d4a373, #f8c8dc);
   transform: translateY(-3px) scale(1.05);
   box-shadow: 0 6px 18px rgba(0,0,0,0.3);
-  animation: pulse 1s infinite;
 }
 
 .btn-submit i {
