@@ -12,7 +12,7 @@ body {
   min-height: 100vh;
   display: flex;
   flex-direction: column;
-  background: url("images/image\ fond\ patisserie.jpg") no-repeat center center fixed;
+  background: url("images/image fond patisserie.jpg") no-repeat center center fixed;
   background-size: cover;
   color: #3a2e2a; /* couleur douce chocolat */
 }
@@ -31,253 +31,291 @@ a {
 }
 
 /* ==========================
-   HEADER
+   HEADER (identique)
 ========================== */
 header {
   width: 100%;
-  padding: 30px 20px;
-  background: rgba(255, 255, 255, 0.8); /* léger fond transparent */
-  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-  backdrop-filter: blur(5px);
+  padding: 20px 40px;
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(10px);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1000;
   display: flex;
   justify-content: center;
-  z-index: 100;
+  align-items: center;
+  flex-direction: column;
+  gap: 10px;
 }
 
 .header-content {
-  max-width: 1200px;
   width: 100%;
+  max-width: 1200px;
   text-align: center;
 }
 
 #h1Header {
   font-family: 'Pacifico', cursive;
-  font-size: clamp(32px, 6vw, 70px);
-  background: linear-gradient(90deg, #f8a5c2, #d9885b);
-  -webkit-background-clip: text;
-  color: transparent;
-  margin-bottom: 15px;
-  text-shadow: 1px 1px 2px rgba(0,0,0,0.2);
+  font-size: clamp(28px, 5vw, 42px);
+  color: #6b4226;
+  letter-spacing: 1px;
+  transition: color 0.3s ease;
 }
 
+#h1Header:hover { color: #d4a373; }
+
+/* NAVIGATION */
 .nav {
   display: flex;
   justify-content: center;
-  gap: 25px;
-  flex-wrap: wrap;
+  gap: 30px;
 }
 
-.nav .btn {
-  display: inline-block;
-  padding: 12px 28px;
-  border-radius: 30px;
-  font-weight: bold;
-  color: #fff;
-  background: linear-gradient(135deg, #f8c8dc, #d9885b);
-  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
-  transition: all 0.3s ease;
+.nav a {
+  position: relative;
+  font-size: 17px;
+  color: #3a2e2a;
+  font-weight: 600;
+  text-decoration: none;
+  padding: 8px 0;
+  transition: color 0.3s ease;
 }
 
-.nav .btn:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 8px 20px rgba(0,0,0,0.3);
-  background: linear-gradient(135deg, #d9885b, #f8c8dc);
+.nav a::after {
+  content: "";
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: linear-gradient(135deg, #f8c8dc, #d4a373);
+  transition: width 0.3s ease;
 }
+.nav a:hover { color: #d4a373; }
+.nav a:hover::after { width: 100%; }
 
+/* BURGER MENU (mobile) */
+.burger { display: none; flex-direction: column; gap: 5px; cursor: pointer; }
+.burger span { width: 28px; height: 3px; background: #6b4226; border-radius: 2px; transition: all 0.3s ease; }
+.burger.active span:nth-child(1) { transform: rotate(45deg) translateY(8px); }
+.burger.active span:nth-child(2) { opacity: 0; }
+.burger.active span:nth-child(3) { transform: rotate(-45deg) translateY(-8px); }
 
 /* ==========================
-   CONTENT
+   CONTENT (amélioré)
 ========================== */
 .content-background {
   flex: 1;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  padding: 50px 20px;
+  display: block;
+  padding: 140px 20px 80px; /* espace pour le header fixe */
   width: 100%;
-  max-width: 1200px;
+  max-width: 1400px;
   margin: 0 auto;
-  background: transparent; /* important pour voir l’image */
+  background: transparent; /* voir l’image de fond */
 }
 
-.card {
-  border-radius: 15px;
+.page-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 2.6rem;
+  color: #6b4226;
+  text-align: center;
+  margin-bottom: 40px;
+  background: linear-gradient(90deg, #f8c8dc, #d4a373);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-shadow: 1px 1px 4px rgba(0,0,0,0.15);
+}
+
+/* ==========================
+   CARTES
+========================== */
+.card.custom-card {
+  border-radius: 20px;
   overflow: hidden;
+  border: none;
+  background: rgba(255,255,255,0.92);
+  backdrop-filter: blur(10px);
   box-shadow: 0 8px 20px rgba(0,0,0,0.15);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 15px 30px rgba(0,0,0,0.25);
+.card.custom-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 18px 36px rgba(0,0,0,0.22);
 }
 
-.card img {
+.card.custom-card img {
   width: 100%;
-  height: 250px;
+  height: 240px;
   object-fit: cover;
 }
 
 .card-body {
   text-align: center;
+  padding: 24px;
 }
 
 .card-title {
   font-family: 'Playfair Display', serif;
-  font-size: 1.3rem;
+  font-size: 1.35rem;
+  color: #6b4226;
   margin-bottom: 10px;
 }
 
-.btn-primary {
-  background-color: #f8c8dc;
+.card-text {
+  font-size: 0.98rem;
+  color: #5a3a2d;
+  margin-bottom: 16px;
+  min-height: 48px; /* alignement visuel */
+}
+
+/* Bouton principal (élégant) */
+.btn.btn-primary {
+  background: linear-gradient(135deg, #f8c8dc, #d4a373);
   color: #3a2e2a;
   border: none;
-  margin-bottom: 5px;
-  transition: all 0.3s;
+  font-weight: 700;
+  padding: 10px 24px;
+  border-radius: 28px;
+  transition: all 0.28s ease;
 }
-
-.btn-primary:hover {
-  background-color: #d9885b;
+.btn.btn-primary:hover {
+  background: linear-gradient(135deg, #d4a373, #f8c8dc);
   color: #fff;
   transform: translateY(-2px);
+  box-shadow: 0 10px 22px rgba(0,0,0,0.18);
 }
-
-.btn-secondary {
-  background-color: #f1e0d6;
-  color: #3a2e2a;
-  border: none;
-  transition: all 0.3s;
-}
-
-.btn-secondary:hover {
-  background-color: #f08da0;
-  color: #fff;
-  transform: translateY(-2px);
-}
-
 
 /* ==========================
-   FOOTER
+   MODAL (texte court)
+========================== */
+.modal-content {
+  border-radius: 18px;
+  border: none;
+  box-shadow: 0 20px 50px rgba(0,0,0,0.25);
+}
+.modal-header {
+  border-bottom: 1px solid rgba(0,0,0,0.06);
+}
+.modal-title {
+  font-family: 'Playfair Display', serif;
+  color: #6b4226;
+}
+.modal-body {
+  color: #3a2e2a;
+  font-size: 1rem;
+}
+
+/* ==========================
+   FOOTER (inchangé)
 ========================== */
 footer {
   width: 100%;
   background: rgba(255, 255, 255, 0.85);
-  padding: 40px 20px 20px 20px;
+  backdrop-filter: blur(10px);
   color: #3a2e2a;
+  box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.08);
   display: flex;
   flex-direction: column;
-  text-align: center;
-  backdrop-filter: blur(5px);
-}
-
-.footer-container {
-  display: flex;
-  justify-content: space-between;  /* espace régulier entre les blocs */
-  align-items: flex-start;         /* tous alignés en haut */
-  flex-wrap: wrap;                 /* s’adapte sur mobile */
-  gap: 40px;
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 20px;
-}
-
-
-.footer-about h3 {
-  font-family: 'Pacifico', cursive;
-  margin-bottom: 15px;
-}
-
-.footer-links h4,
-.footer-contact h4 {
-  font-family: 'Playfair Display', serif;
-  margin-bottom: 10px;
-}
-
-.footer-links ul {
-  list-style: none;
+  margin-top: auto;
   padding: 0;
 }
 
-.footer-links ul li {
-  margin: 8px 0;
+.footer-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 40px;
+  flex-wrap: wrap;
+  padding: 60px 20px;
 }
 
-.footer-links a {
-  color: #3a2e2a;
-  transition: color 0.3s;
-}
+.footer-container div { flex: 1 1 250px; }
 
-.footer-links a:hover {
-  color: #f08da0; /* effet gourmand */
-}
-
-.footer-contact p {
-  margin: 8px 0;
-  font-size: 14px;
-}
-
-.socials a {
+footer h3 {
   font-size: 20px;
-  margin-right: 10px;
-  color: #3a2e2a;
-  transition: color 0.3s;
+  margin-bottom: 20px;
+  color: #6b4226;
+  position: relative;
+}
+footer h3::after {
+  content: "";
+  display: block;
+  width: 40px;
+  height: 3px;
+  background: linear-gradient(135deg, #f8c8dc, #d4a373);
+  margin-top: 6px;
+  border-radius: 2px;
 }
 
-.socials a:hover {
-  color: #f08da0;
+footer p, footer a {
+  color: #3a2e2a;
+  font-size: 15px;
+  line-height: 1.7;
+  text-decoration: none;
+  transition: color 0.3s ease;
 }
+footer a:hover { color: #d4a373; }
+
+.socials { display: flex; gap: 15px; margin-top: 10px; }
+.socials a {
+  font-size: 22px;
+  transition: transform 0.3s ease, color 0.3s ease;
+  color: #6b4226;
+}
+.socials a:hover { transform: scale(1.2); color: #d4a373; }
 
 .footer-bottom {
-  margin-top: 20px;
+  width: 100%;
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(10px);
+  text-align: center;
+  padding: 18px 20px;
   font-size: 14px;
-  border-top: 1px solid rgba(0,0,0,0.1);
-  padding-top: 15px;
+  color: #6b4226;
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
+  box-shadow: inset 0 2px 5px rgba(0, 0, 0, 0.05);
+  margin: 0;
 }
 
-.footer-about,
-.footer-links,
-.footer-contact {
-  flex: 1 1 300px;  /* largeur flexible mais minimum 300px */
-  min-width: 250px;
-}
-
-.footer-about {
-  text-align: left;
-}
-.footer-links,
-.footer-contact {
-  text-align: left;
+/* ==========================
+   RESPONSIVE
+========================== */
+@media (max-width: 992px) {
+  .card.custom-card img { height: 220px; }
+  .page-title { font-size: 2.2rem; }
 }
 
 @media (max-width: 768px) {
+  .burger { display: flex; }
+
+  .nav {
+    position: absolute;
+    top: 140px;
+    right: 0;
+    width: 100%;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    background: rgba(255, 255, 255, 0.95);
+    padding: 20px 0;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    transform: translateY(-200%);
+    opacity: 0;
+    transition: all 0.4s ease;
+  }
+  .nav.active { transform: translateY(0); opacity: 1; }
+
   .footer-container {
     flex-direction: column;
     text-align: center;
     align-items: center;
   }
-}
-
-
-
-/* ==========================
-   RESPONSIVE
-========================== */
-@media screen and (max-width: 992px) {
-  .custom-card {
-    flex: 1 1 calc(50% - 20px); /* 2 cartes par ligne */
-  }
-}
-
-@media screen and (max-width: 600px) {
-  .custom-card {
-    flex: 1 1 100%; /* 1 carte par ligne */
-  }
-
-  .content-background {
-    padding: 20px 10px;
-  }
-
-  header .header-content, .footer-container {
-    padding: 0 10px;
-  }
+  .footer-container div { flex: 1 1 100%; margin-bottom: 30px; }
+  .socials { justify-content: center; }
 }

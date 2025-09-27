@@ -1,41 +1,16 @@
-document.addEventListener('DOMContentLoaded', function() {
-    const modalEl = document.getElementById('modalDynamic');
-    const modalTitle = modalEl.querySelector('#modalTitle');
-    const carouselInner = modalEl.querySelector('#carouselInner');
-    const modalRecipe = modalEl.querySelector('#modalRecipe');
-    let carouselInstance = null;
+const bg = document.querySelector('.background-parallax');
 
-    modalEl.addEventListener('show.bs.modal', function(event) {
-        const button = event.relatedTarget.closest('.card');
-        const title = button.getAttribute('data-title');
-        const images = JSON.parse(button.getAttribute('data-images'));
-        const recipeHTML = button.getAttribute('data-recipe');
+window.addEventListener('scroll', () => {
+  const scrollTop = window.scrollY;
+  const headerHeight = document.querySelector('header').offsetHeight;
+  const footerOffset = document.querySelector('footer').offsetTop;
 
-        // Titre
-        modalTitle.textContent = title;
+  const maxTranslate = footerOffset - headerHeight - bg.offsetHeight;
+  // Parallax léger : diviser le scroll pour effet fluide
+  let translateY = scrollTop * 0.3;
 
-        // Recette
-        modalRecipe.innerHTML = recipeHTML;
+  if (translateY > maxTranslate) translateY = maxTranslate;
+  if (translateY < 0) translateY = 0;
 
-        // Slides
-        carouselInner.innerHTML = '';
-        images.forEach((src, i) => {
-            const div = document.createElement('div');
-            div.className = 'carousel-item' + (i === 0 ? ' active' : '');
-            div.innerHTML = `<img src="${src}" class="d-block w-100" alt="${title}">`;
-            carouselInner.appendChild(div);
-        });
-
-        // Créer l’instance du carousel
-        carouselInstance = new bootstrap.Carousel(modalEl.querySelector('#modalCarousel'), {
-            interval: false
-        });
-    });
-
-    modalEl.addEventListener('hidden.bs.modal', function() {
-        if (carouselInstance) {
-            carouselInstance.dispose();
-            carouselInstance = null;
-        }
-    });
+  bg.style.transform = `translateY(${translateY}px)`;
 });

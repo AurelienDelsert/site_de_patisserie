@@ -6,20 +6,14 @@
 }
 
 html, body {
-  height: 100%;
+  min-height: 100%;
   font-family: 'Arial', sans-serif;
-  background: #fff;
+  background: url("images/image fond patisserie.jpg") no-repeat center center;
+  background-attachment: scroll; /* ✅ image défile */
+  background-size: cover;
+  color: #3a2e2a;
   overflow-x: hidden;
-  margin: 0;
-  padding: 0;
-  display: flex;
-  flex-direction: column;
 }
-
-body {
-  background: transparent;
-}
-
 
 /* HEADER */
 header {
@@ -36,7 +30,7 @@ header {
   display: flex;
   justify-content: center;
   align-items: center;
-  flex-direction: column; /* ✅ Titre au-dessus, menu en dessous */
+  flex-direction: column;
   gap: 10px;
 }
 
@@ -94,7 +88,7 @@ header {
   width: 100%;
 }
 
-/* BURGER MENU (mobile) */
+/* BURGER MENU */
 .burger {
   display: none;
   flex-direction: column;
@@ -122,28 +116,14 @@ header {
 
 /* MAIN */
 main {
-  flex: 1; /* ✅ pousse le footer vers le bas */
+  flex: 1;
   position: relative;
-  min-height: 100vh;
-  padding-top: 160px; /* ✅ espace pour header */
+  min-height: 100vh; /* ✅ revient à la hauteur naturelle */
+  padding-top: 160px;
   display: flex;
   justify-content: center;
   align-items: center;
 }
-
-/* FOND PARALLAX */
-.background-parallax {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: url('images/image\ fond\ patisserie.jpg') no-repeat center center;
-  background-size: cover;
-  background-attachment: fixed;
-  z-index: -1;
-}
-
 
 /* FORMULAIRE CENTRÉ */
 .contact-box {
@@ -263,8 +243,8 @@ footer {
   box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.08);
   display: flex;
   flex-direction: column;
-  margin-top: auto; /* ✅ colle le footer en bas */
-  padding: 0; /* ✅ on enlève les paddings globaux */
+  margin-top: auto;
+  padding: 0;
 }
 
 .footer-container {
@@ -276,7 +256,7 @@ footer {
   align-items: flex-start;
   gap: 40px;
   flex-wrap: wrap;
-  padding: 60px 20px; /* ✅ padding ici, plus dans footer */
+  padding: 60px 20px;
 }
 
 .footer-container div {
@@ -332,7 +312,7 @@ footer a:hover {
 
 .footer-bottom {
   width: 100%;
-  background: rgba(255, 255, 255, 0.85); /* même fond */
+  background: rgba(255, 255, 255, 0.85);
   backdrop-filter: blur(10px);
   text-align: center;
   padding: 18px 20px;
@@ -342,7 +322,6 @@ footer a:hover {
   box-shadow: inset 0 2px 5px rgba(0, 0, 0, 0.05);
   margin: 0;
 }
-
 
 /* RESPONSIVE */
 @media (max-width: 768px) {

@@ -1,150 +1,296 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>L'univers de Lorie - Réalisations</title>
 
-  <!-- CSS -->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css">
-  <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Playfair+Display:wght@600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" type="text/css" href="realisations.css">
+  <!-- Bootstrap & Icônes -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" />
+
+  <!-- Polices -->
+  <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Playfair+Display:wght@600&display=swap" rel="stylesheet" />
+
+  <!-- Feuille de style -->
+  <link rel="stylesheet" href="realisations.css" />
 </head>
+
 <body>
+  <div class="main-wrapper">
+    <!-- HEADER -->
+    <header>
+      <div class="header-content">
+        <h1 id="h1Header"><i class="bi bi-cupcake-fill"></i> L'univers de Lorie</h1>
+        <nav class="nav" id="navMenu">
+          <a href="index.html">Accueil</a>
+          <a href="realisations.html">Réalisations</a>
+          <a href="contact.html">Contact</a>
+        </nav>
+        <div class="burger" id="burgerBtn" aria-label="Menu mobile" role="button" tabindex="0">
+          <span></span><span></span><span></span>
+        </div>
+      </div>
+    </header>
 
-<!-- Bandes latérales -->
-<div class="side-band left"></div>
-<div class="side-band right"></div>
+    <!-- CONTENU -->
+    <main class="content-background container py-5">
+      <h2 class="page-title text-center mb-5">✨ Mes Réalisations ✨</h2>
 
-<div class="main-wrapper">
-
-  <!-- HEADER -->
-  <header>
-    <div class="header-content">
-      <h1 id="h1Header">L'univers de Lorie</h1>
-      <nav class="nav">
-        <a id="btn1" href="index.html" class="btn">Accueil</a>
-        <a id="btn2" href="realisations.html" class="btn">Réalisations</a>
-        <a id="btn3" href="contact.html" class="btn">Contact</a>
-      </nav>
-    </div>
-  </header>
-
-  <!-- CONTENU -->
-  <div class="content-background">
-    <div class="container my-5">
-      <h2 class="text-center mb-4">Mes réalisations</h2>
-        <div class="row g-4 justify-content-center">
-          <!-- Carte 1 -->
-          <div class="col-sm-6 col-md-4">
-            <div class="card custom-card h-100"
-                data-title="Brioche en tresse"
-                data-images='["Images/La tresse 1 sur 2.JPG","Images/La tresse 2 sur 2.JPG"]'
-                data-recipe='<h6>Ingrédients :</h6><ul><li>500g de farine</li><li>60g de sucre</li><li>10g de sel</li><li>20g de levure fraîche</li><li>250ml de lait</li><li>50g de beurre</li><li>1 œuf</li></ul><h6>Préparation :</h6><p>Mélangez, pétrissez, laissez lever 1h, façonnez la tresse, laissez lever encore 30min et enfournez 25min à 180°C.</p>'>
-              <img src="Images/La tresse 1 sur 2.JPG" class="card-img-top" alt="Brioche en tresse">
-              <div class="card-body text-center">
-                <h5 class="card-title">Brioche en tresse</h5>
-                <button class="btn btn-primary mb-2" data-bs-toggle="modal" data-bs-target="#modalDynamic">Voir les images / recette</button>
-              </div>
+      <div class="row g-4">
+        <!-- 12 CARTES (3 par ligne desktop, 2 tablette, 1 mobile) -->
+        <!-- Carte 1 -->
+        <div class="col-sm-6 col-lg-4">
+          <article class="card h-100 custom-card"
+                   data-title="Délice Vanillé"
+                   data-text="Recette en cours d’écriture. Revenez bientôt pour plus de détails !">
+            <img src="images/Photo.png" class="card-img-top" alt="Délice Vanillé">
+            <div class="card-body">
+              <h5 class="card-title">Délice Vanillé</h5>
+              <p class="card-text">Un entremets onctueux à la vanille, tout en douceur.</p>
+              <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalRecette">Voir la recette</button>
             </div>
-          </div>
+          </article>
+        </div>
 
-          <!-- Carte 2 -->
-          <div class="col-sm-6 col-md-4">
-            <div class="card custom-card h-100"
-                data-title="Tarte aux fruits"
-                data-images='["Images/tarte1.JPG","Images/tarte2.JPG"]'
-                data-recipe='<h6>Ingrédients :</h6><ul><li>...</li></ul><h6>Préparation :</h6><p>...</p>'>
-              <img src="Images/tarte1.JPG" class="card-img-top" alt="Tarte aux fruits">
-              <div class="card-body text-center">
-                <h5 class="card-title">Tarte aux fruits</h5>
-                <button class="btn btn-primary mb-2" data-bs-toggle="modal" data-bs-target="#modalDynamic">Voir les images / recette</button>
-              </div>
+        <!-- Carte 2 -->
+        <div class="col-sm-6 col-lg-4">
+          <article class="card h-100 custom-card"
+                   data-title="Nuage Cacao"
+                   data-text="Recette en cours d’écriture. Revenez bientôt pour plus de détails !">
+            <img src="images/Photo.png" class="card-img-top" alt="Nuage Cacao">
+            <div class="card-body">
+              <h5 class="card-title">Nuage Cacao</h5>
+              <p class="card-text">Léger, aérien et intensément chocolaté.</p>
+              <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalRecette">Voir la recette</button>
             </div>
-          </div>
+          </article>
+        </div>
 
-          <!-- Carte 3 -->
-          <div class="col-sm-6 col-md-4">
-            <div class="card custom-card h-100"
-                data-title="Cake au chocolat"
-                data-images='["Images/cake1.JPG","Images/cake2.JPG"]'
-                data-recipe='<h6>Ingrédients :</h6><ul><li>...</li></ul><h6>Préparation :</h6><p>...</p>'>
-              <img src="Images/cake1.JPG" class="card-img-top" alt="Cake au chocolat">
-              <div class="card-body text-center">
-                <h5 class="card-title">Cake au chocolat</h5>
-                <button class="btn btn-primary mb-2" data-bs-toggle="modal" data-bs-target="#modalDynamic">Voir les images / recette</button>
-              </div>
+        <!-- Carte 3 -->
+        <div class="col-sm-6 col-lg-4">
+          <article class="card h-100 custom-card"
+                   data-title="Rose Gourmande"
+                   data-text="Recette en cours d’écriture. Revenez bientôt pour plus de détails !">
+            <img src="images/Photo.png" class="card-img-top" alt="Rose Gourmande">
+            <div class="card-body">
+              <h5 class="card-title">Rose Gourmande</h5>
+              <p class="card-text">Crémeux subtil et biscuit fondant, finition satinée.</p>
+              <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalRecette">Voir la recette</button>
+            </div>
+          </article>
+        </div>
+
+        <!-- Carte 4 -->
+        <div class="col-sm-6 col-lg-4">
+          <article class="card h-100 custom-card"
+                   data-title="Caramel Rêvé"
+                   data-text="Recette en cours d’écriture. Revenez bientôt pour plus de détails !">
+            <img src="images/Photo.png" class="card-img-top" alt="Caramel Rêvé">
+            <div class="card-body">
+              <h5 class="card-title">Caramel Rêvé</h5>
+              <p class="card-text">Un cœur fondant au caramel, tout en élégance.</p>
+              <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalRecette">Voir la recette</button>
+            </div>
+          </article>
+        </div>
+
+        <!-- Carte 5 -->
+        <div class="col-sm-6 col-lg-4">
+          <article class="card h-100 custom-card"
+                   data-title="Velours Praliné"
+                   data-text="Recette en cours d’écriture. Revenez bientôt pour plus de détails !">
+            <img src="images/Photo.png" class="card-img-top" alt="Velours Praliné">
+            <div class="card-body">
+              <h5 class="card-title">Velours Praliné</h5>
+              <p class="card-text">Gourmandise noisette sur base croustillante.</p>
+              <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalRecette">Voir la recette</button>
+            </div>
+          </article>
+        </div>
+
+        <!-- Carte 6 -->
+        <div class="col-sm-6 col-lg-4">
+          <article class="card h-100 custom-card"
+                   data-title="Éclat Framboise"
+                   data-text="Recette en cours d’écriture. Revenez bientôt pour plus de détails !">
+            <img src="images/Photo.png" class="card-img-top" alt="Éclat Framboise">
+            <div class="card-body">
+              <h5 class="card-title">Éclat Framboise</h5>
+              <p class="card-text">Acidulé, frais et délicatement fruité.</p>
+              <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalRecette">Voir la recette</button>
+            </div>
+          </article>
+        </div>
+
+        <!-- Carte 7 -->
+        <div class="col-sm-6 col-lg-4">
+          <article class="card h-100 custom-card"
+                   data-title="Signature Pistache"
+                   data-text="Recette en cours d’écriture. Revenez bientôt pour plus de détails !">
+            <img src="images/Photo.png" class="card-img-top" alt="Signature Pistache">
+            <div class="card-body">
+              <h5 class="card-title">Signature Pistache</h5>
+              <p class="card-text">Crémeux pistache, équilibre et finesse.</p>
+              <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalRecette">Voir la recette</button>
+            </div>
+          </article>
+        </div>
+
+        <!-- Carte 8 -->
+        <div class="col-sm-6 col-lg-4">
+          <article class="card h-100 custom-card"
+                   data-title="Perle Citron"
+                   data-text="Recette en cours d’écriture. Revenez bientôt pour plus de détails !">
+            <img src="images/Photo.png" class="card-img-top" alt="Perle Citron">
+            <div class="card-body">
+              <h5 class="card-title">Perle Citron</h5>
+              <p class="card-text">Fraîcheur citronnée et meringue légère.</p>
+              <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalRecette">Voir la recette</button>
+            </div>
+          </article>
+        </div>
+
+        <!-- Carte 9 -->
+        <div class="col-sm-6 col-lg-4">
+          <article class="card h-100 custom-card"
+                   data-title="Opaline Café"
+                   data-text="Recette en cours d’écriture. Revenez bientôt pour plus de détails !">
+            <img src="images/Photo.png" class="card-img-top" alt="Opaline Café">
+            <div class="card-body">
+              <h5 class="card-title">Opaline Café</h5>
+              <p class="card-text">Intensité café sur biscuit moelleux.</p>
+              <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalRecette">Voir la recette</button>
+            </div>
+          </article>
+        </div>
+
+        <!-- Carte 10 -->
+        <div class="col-sm-6 col-lg-4">
+          <article class="card h-100 custom-card"
+                   data-title="Mousse Amande"
+                   data-text="Recette en cours d’écriture. Revenez bientôt pour plus de détails !">
+            <img src="images/Photo.png" class="card-img-top" alt="Mousse Amande">
+            <div class="card-body">
+              <h5 class="card-title">Mousse Amande</h5>
+              <p class="card-text">Légèreté et douceur aux notes d’amande.</p>
+              <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalRecette">Voir la recette</button>
+            </div>
+          </article>
+        </div>
+
+        <!-- Carte 11 -->
+        <div class="col-sm-6 col-lg-4">
+          <article class="card h-100 custom-card"
+                   data-title="Satin Noisette"
+                   data-text="Recette en cours d’écriture. Revenez bientôt pour plus de détails !">
+            <img src="images/Photo.png" class="card-img-top" alt="Satin Noisette">
+            <div class="card-body">
+              <h5 class="card-title">Satin Noisette</h5>
+              <p class="card-text">Gourmandise pralinée et glaçage brillant.</p>
+              <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalRecette">Voir la recette</button>
+            </div>
+          </article>
+        </div>
+
+        <!-- Carte 12 -->
+        <div class="col-sm-6 col-lg-4">
+          <article class="card h-100 custom-card"
+                   data-title="Étoile Coco"
+                   data-text="Recette en cours d’écriture. Revenez bientôt pour plus de détails !">
+            <img src="images/Photo.png" class="card-img-top" alt="Étoile Coco">
+            <div class="card-body">
+              <h5 class="card-title">Étoile Coco</h5>
+              <p class="card-text">Exotique et fondant, aux notes de coco.</p>
+              <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalRecette">Voir la recette</button>
+            </div>
+          </article>
+        </div>
+      </div>
+    </main>
+
+    <!-- MODAL unique -->
+    <div class="modal fade" id="modalRecette" tabindex="-1" aria-hidden="true">
+      <div class="modal-dialog modal-lg modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="modalTitle">Titre de la pâtisserie</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Fermer"></button>
+          </div>
+          <div class="modal-body">
+            <div class="text-muted" id="modalText">
+              Recette en cours d’écriture. Revenez bientôt pour plus de détails !
             </div>
           </div>
         </div>
       </div>
     </div>
+
+    <!-- FOOTER (inchangé) -->
+    <footer>
+      <div class="footer-container">
+        <div class="footer-about">
+          <h3>À propos</h3>
+          <p>Bienvenue dans l'univers de Lorie, où chaque pâtisserie est faite avec passion et gourmandise.</p>
+        </div>
+
+        <div class="footer-links">
+          <h3>Liens utiles</h3>
+          <ul>
+            <li><a href="index.html">Accueil</a></li>
+            <li><a href="realisations.html">Réalisations</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-contact">
+          <h3>Contact</h3>
+          <p>Email : <a href="mailto:loriedepoot@gmail.com">loriedepoot@gmail.com</a></p>
+          <p>Téléphone : 07.71.55.04.45</p>
+          <div class="socials">
+            <a href="#"><i class="bi bi-facebook"></i></a>
+            <a href="#"><i class="bi bi-instagram"></i></a>
+            <a href="#"><i class="bi bi-twitter"></i></a>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>© 2025 L'univers de Lorie - Tous droits réservés</p>
+      </div>
+    </footer>
   </div>
 
-  <!-- Modal unique -->
-  <div class="modal fade" id="modalDynamic" tabindex="-1" aria-hidden="true">
-    <div class="modal-dialog modal-lg modal-dialog-centered">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title" id="modalTitle">Titre</h5>
-          <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
-        </div>
-        <div class="modal-body">
-          <!-- Carrousel -->
-          <div id="modalCarousel" class="carousel slide mb-3">
-            <div class="carousel-inner" id="carouselInner"></div>
-            <button class="carousel-control-prev" type="button" data-bs-target="#modalCarousel" data-bs-slide="prev">
-              <span class="carousel-control-prev-icon"></span>
-            </button>
-            <button class="carousel-control-next" type="button" data-bs-target="#modalCarousel" data-bs-slide="next">
-              <span class="carousel-control-next-icon"></span>
-            </button>
-          </div>
-          <!-- Recette -->
-          <div id="modalRecipe"></div>
-        </div>
-      </div>
-    </div>
-  </div>
+  <!-- JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+    // Burger
+    const burger = document.getElementById("burgerBtn");
+    const nav = document.getElementById("navMenu");
+    if (burger) {
+      burger.addEventListener("click", () => {
+        burger.classList.toggle("active");
+        nav.classList.toggle("active");
+      });
+      burger.addEventListener("keypress", (e) => {
+        if (e.key === "Enter") {
+          burger.classList.toggle("active");
+          nav.classList.toggle("active");
+        }
+      });
+    }
 
+    // Modal dynamique (texte court)
+    const recetteModal = document.getElementById('modalRecette');
+    recetteModal.addEventListener('show.bs.modal', (event) => {
+      const button = event.relatedTarget; // bouton cliqué
+      const card = button.closest('.custom-card');
+      const title = card.dataset.title || 'Recette';
+      const text  = card.dataset.text  || 'Recette en cours d’écriture.';
 
-
-  <!-- FOOTER -->
-  <footer>
-    <div class="footer-container">
-      <div class="footer-about">
-        <h3>🍰 L'univers de Lorie</h3>
-        <p>Passionnée de pâtisserie, je partage mes créations et mon univers sucré.</p>
-      </div>
-      <div class="footer-links">
-        <h4>Navigation</h4>
-        <ul>
-          <li><a href="index.html">Accueil</a></li>
-          <li><a href="realisations.html">Réalisations</a></li>
-          <li><a href="contact.html">Contact</a></li>
-        </ul>
-      </div>
-      <div class="footer-contact">
-        <h4>Me retrouver</h4>
-        <p><i class="bi bi-envelope-fill"></i> loriedepoot@gmail.com</p>
-        <p><i class="bi bi-geo-alt-fill"></i> Tourcoing, France</p>
-        <div class="socials">
-          <a href="#"><i class="bi bi-facebook"></i></a>
-          <a href="#"><i class="bi bi-instagram"></i></a>
-          <a href="#"><i class="bi bi-pinterest"></i></a>
-        </div>
-      </div>
-    </div>
-    <div class="footer-bottom">
-      <p>&copy; 2025 Lorie Depoot - Tous droits réservés 🍩</p>
-    </div>
-  </footer>
-
-</div>
-
-<!-- JS -->
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
-<script type="text/javascript" src="realisations.js"></script>
+      document.getElementById('modalTitle').textContent = title;
+      document.getElementById('modalText').textContent  = text;
+    });
+  </script>
 </body>
 </html>
