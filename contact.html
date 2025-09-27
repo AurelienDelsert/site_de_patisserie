@@ -12,39 +12,31 @@
   <!-- Polices -->
   <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Playfair+Display:wght@600&display=swap" rel="stylesheet" />
 
-  <!-- Feuille de style -->
+  <!-- Style -->
   <link rel="stylesheet" href="contact.css" />
 </head>
 
 <body>
-
   <!-- HEADER -->
   <header>
     <div class="header-content">
-      <h1 id="h1Header">
-        <i class="bi bi-cupcake-fill"></i> L'univers de Lorie
-      </h1>
+      <h1 id="h1Header"><i class="bi bi-cupcake-fill"></i><i class="bi bi-stars"></i> L'univers de Lorie <i class="bi bi-stars"></i></h1>
 
-      <!-- Navigation -->
       <nav class="nav" id="navMenu">
         <a href="index.html">Accueil</a>
         <a href="realisations.html">Réalisations</a>
         <a href="contact.html">Contact</a>
       </nav>
 
-      <!-- Bouton Burger (mobile) -->
+      <!-- Burger -->
       <div class="burger" id="burgerBtn" aria-label="Menu mobile" role="button" tabindex="0">
-        <span></span>
-        <span></span>
-        <span></span>
+        <span></span><span></span><span></span>
       </div>
     </div>
   </header>
 
   <!-- MAIN -->
   <main>
-    <div class="background-parallax"></div>
-
     <section class="contact-box">
       <form class="contact-form">
         <h2>🍩 Contactez-moi 🍰</h2>
@@ -84,13 +76,11 @@
   <!-- FOOTER -->
   <footer>
     <div class="footer-container">
-      <!-- Bloc gauche -->
       <div class="footer-about">
         <h3>À propos</h3>
         <p>Bienvenue dans l'univers de Lorie, où chaque pâtisserie est faite avec passion et gourmandise.</p>
       </div>
 
-      <!-- Bloc milieu -->
       <div class="footer-links">
         <h3>Liens utiles</h3>
         <ul>
@@ -100,7 +90,6 @@
         </ul>
       </div>
 
-      <!-- Bloc droit -->
       <div class="footer-contact">
         <h3>Contact</h3>
         <p>Email : <a href="mailto:loriedepoot@gmail.com">loriedepoot@gmail.com</a></p>
@@ -113,7 +102,6 @@
       </div>
     </div>
 
-    <!-- Bas de page -->
     <div class="footer-bottom">
       <p>© 2025 L'univers de Lorie - Tous droits réservés</p>
     </div>
@@ -129,7 +117,6 @@
       nav.classList.toggle("active");
     });
 
-    // Accessibilité : ouvrir avec "Entrée" aussi
     burger.addEventListener("keypress", (e) => {
       if (e.key === "Enter") {
         burger.classList.toggle("active");
@@ -137,6 +124,5 @@
       }
     });
   </script>
-
 </body>
 </html>
