@@ -16,14 +16,15 @@
   <link rel="stylesheet" href="realisations.css" />
 </head>
 <body>
+
   <div class="main-wrapper">
-    <!-- HEADER (inchangé) -->
+    <!-- HEADER -->
     <header>
       <div class="header-content">
         <h1 id="h1Header"><i class="bi bi-cupcake-fill"></i><i class="bi bi-stars"></i> L'univers de Lorie <i class="bi bi-stars"></i></h1>
         <nav class="nav" id="navMenu">
           <a href="index.html">Accueil</a>
-          <a href="realisations.html">Réalisations</a>
+          <a href="realisations.html" class="active">Réalisations</a>
           <a href="contact.html">Contact</a>
         </nav>
         <div class="burger" id="burgerBtn" aria-label="Menu mobile" role="button" tabindex="0">
@@ -34,219 +35,221 @@
 
     <!-- CONTENU -->
     <main class="content-background container">
-      <h2 class="page-title"><i class="bi bi-stars"></i> Mes Réalisations <i class="bi bi-stars"></i></h2>
+      <section class="image-fond">
+        <div class="content">
+          <h2 class="page-title"><i class="bi bi-stars"></i> Mes Réalisations <i class="bi bi-stars"></i></h2>
 
-      <div class="row g-4">
-        <!-- 12 CARTES -->
-        <!-- Utilise col-12 / col-md-6 / col-lg-4 => 1 / 2 / 3 colonnes -->
-        <!-- Modèle de carte (toutes utilisent images/Photo.png) -->
-        <!-- Carte 1 -->
-        <div class="col-12 col-md-6 col-lg-4">
-          <article class="card custom-card h-100"
-            data-title="Délice Vanillé"
-            data-images='["images/Photo.png","images/Photo.png"]'
-            data-recipe="Recette en cours d’écriture. Revenez bientôt pour plus de détails !">
-            <img src="images/Photo.png" class="card-img-top" alt="Délice Vanillé">
-            <div class="card-body">
-              <h5 class="card-title">Délice Vanillé</h5>
-              <p class="card-desc">Entremets vanillé tout en douceur, finition satinée.</p>
-            </div>
-            <div class="card-footer bg-transparent border-0">
-              <button class="btn btn-primary w-100" data-bs-toggle="modal" data-bs-target="#modalRecette">Voir la recette</button>
-            </div>
-          </article>
-        </div>
+          <section class="row g-4">
 
-        <!-- Carte 2 -->
-        <div class="col-12 col-md-6 col-lg-4">
-          <article class="card custom-card h-100"
-            data-title="Nuage Cacao"
-            data-images='["images/Photo.png","images/Photo.png"]'
-            data-recipe="Un dessert aérien au chocolat. Recette à venir très bientôt.">
-            <img src="images/Photo.png" class="card-img-top" alt="Nuage Cacao">
-            <div class="card-body">
-              <h5 class="card-title">Nuage Cacao</h5>
-              <p class="card-desc">Léger, aérien, intensément chocolaté.</p>
+            <!-- Carte 1 -->
+            <div class="col-12 col-md-6 col-lg-4">
+              <article class="card custom-card h-100"
+                data-title="Délice Vanillé"
+                data-images='["images/Photo.png","images/Photo.png"]'
+                data-recipe="Recette en cours d’écriture. Revenez bientôt pour plus de détails !">
+                <img src="images/Photo.png" class="card-img-top" alt="Délice Vanillé">
+                <div class="card-body">
+                  <h5 class="card-title">Délice Vanillé</h5>
+                  <p class="card-desc">Entremets vanillé tout en douceur, finition satinée.</p>
+                </div>
+                <div class="card-footer bg-transparent border-0">
+                  <button class="btn btn-primary w-100" data-bs-toggle="modal" data-bs-target="#modalRecette">Voir la recette</button>
+                </div>
+              </article>
             </div>
-            <div class="card-footer bg-transparent border-0">
-              <button class="btn btn-primary w-100" data-bs-toggle="modal" data-bs-target="#modalRecette">Voir la recette</button>
-            </div>
-          </article>
-        </div>
 
-        <!-- Carte 3 -->
-        <div class="col-12 col-md-6 col-lg-4">
-          <article class="card custom-card h-100"
-            data-title="Rose Gourmande"
-            data-images='["images/Photo.png","images/Photo.png"]'
-            data-recipe="Crémeux délicat et biscuit fondant. Recette en préparation.">
-            <img src="images/Photo.png" class="card-img-top" alt="Rose Gourmande">
-            <div class="card-body">
-              <h5 class="card-title">Rose Gourmande</h5>
-              <p class="card-desc">Crémeux subtil et biscuit moelleux.</p>
+            <!-- Carte 2 -->
+            <div class="col-12 col-md-6 col-lg-4">
+              <article class="card custom-card h-100"
+                data-title="Nuage Cacao"
+                data-images='["images/Photo.png","images/Photo.png"]'
+                data-recipe="Un dessert aérien au chocolat. Recette à venir très bientôt.">
+                <img src="images/Photo.png" class="card-img-top" alt="Nuage Cacao">
+                <div class="card-body">
+                  <h5 class="card-title">Nuage Cacao</h5>
+                  <p class="card-desc">Léger, aérien, intensément chocolaté.</p>
+                </div>
+                <div class="card-footer bg-transparent border-0">
+                  <button class="btn btn-primary w-100" data-bs-toggle="modal" data-bs-target="#modalRecette">Voir la recette</button>
+                </div>
+              </article>
             </div>
-            <div class="card-footer bg-transparent border-0">
-              <button class="btn btn-primary w-100" data-bs-toggle="modal" data-bs-target="#modalRecette">Voir la recette</button>
-            </div>
-          </article>
-        </div>
 
-        <!-- Carte 4 -->
-        <div class="col-12 col-md-6 col-lg-4">
-          <article class="card custom-card h-100"
-            data-title="Caramel Rêvé"
-            data-images='["images/Photo.png","images/Photo.png"]'
-            data-recipe="Cœur fondant au caramel. Détails de la recette à venir.">
-            <img src="images/Photo.png" class="card-img-top" alt="Caramel Rêvé">
-            <div class="card-body">
-              <h5 class="card-title">Caramel Rêvé</h5>
-              <p class="card-desc">Un cœur caramel tout en élégance.</p>
+            <!-- Carte 3 -->
+            <div class="col-12 col-md-6 col-lg-4">
+              <article class="card custom-card h-100"
+                data-title="Rose Gourmande"
+                data-images='["images/Photo.png","images/Photo.png"]'
+                data-recipe="Crémeux délicat et biscuit fondant. Recette en préparation.">
+                <img src="images/Photo.png" class="card-img-top" alt="Rose Gourmande">
+                <div class="card-body">
+                  <h5 class="card-title">Rose Gourmande</h5>
+                  <p class="card-desc">Crémeux subtil et biscuit moelleux.</p>
+                </div>
+                <div class="card-footer bg-transparent border-0">
+                  <button class="btn btn-primary w-100" data-bs-toggle="modal" data-bs-target="#modalRecette">Voir la recette</button>
+                </div>
+              </article>
             </div>
-            <div class="card-footer bg-transparent border-0">
-              <button class="btn btn-primary w-100" data-bs-toggle="modal" data-bs-target="#modalRecette">Voir la recette</button>
-            </div>
-          </article>
-        </div>
 
-        <!-- Carte 5 -->
-        <div class="col-12 col-md-6 col-lg-4">
-          <article class="card custom-card h-100"
-            data-title="Velours Praliné"
-            data-images='["images/Photo.png","images/Photo.png"]'
-            data-recipe="Gourmandise pralinée sur base croustillante. Recette à suivre.">
-            <img src="images/Photo.png" class="card-img-top" alt="Velours Praliné">
-            <div class="card-body">
-              <h5 class="card-title">Velours Praliné</h5>
-              <p class="card-desc">Noisette, finesse et croquant.</p>
+            <!-- Carte 4 -->
+            <div class="col-12 col-md-6 col-lg-4">
+              <article class="card custom-card h-100"
+                data-title="Caramel Rêvé"
+                data-images='["images/Photo.png","images/Photo.png"]'
+                data-recipe="Cœur fondant au caramel. Détails de la recette à venir.">
+                <img src="images/Photo.png" class="card-img-top" alt="Caramel Rêvé">
+                <div class="card-body">
+                  <h5 class="card-title">Caramel Rêvé</h5>
+                  <p class="card-desc">Un cœur caramel tout en élégance.</p>
+                </div>
+                <div class="card-footer bg-transparent border-0">
+                  <button class="btn btn-primary w-100" data-bs-toggle="modal" data-bs-target="#modalRecette">Voir la recette</button>
+                </div>
+              </article>
             </div>
-            <div class="card-footer bg-transparent border-0">
-              <button class="btn btn-primary w-100" data-bs-toggle="modal" data-bs-target="#modalRecette">Voir la recette</button>
-            </div>
-          </article>
-        </div>
 
-        <!-- Carte 6 -->
-        <div class="col-12 col-md-6 col-lg-4">
-          <article class="card custom-card h-100"
-            data-title="Éclat Framboise"
-            data-images='["images/Photo.png","images/Photo.png"]'
-            data-recipe="Acidulé et frais, parfait pour l’été. Recette en cours.">
-            <img src="images/Photo.png" class="card-img-top" alt="Éclat Framboise">
-            <div class="card-body">
-              <h5 class="card-title">Éclat Framboise</h5>
-              <p class="card-desc">Fruité et délicatement acidulé.</p>
+            <!-- Carte 5 -->
+            <div class="col-12 col-md-6 col-lg-4">
+              <article class="card custom-card h-100"
+                data-title="Velours Praliné"
+                data-images='["images/Photo.png","images/Photo.png"]'
+                data-recipe="Gourmandise pralinée sur base croustillante. Recette à suivre.">
+                <img src="images/Photo.png" class="card-img-top" alt="Velours Praliné">
+                <div class="card-body">
+                  <h5 class="card-title">Velours Praliné</h5>
+                  <p class="card-desc">Noisette, finesse et croquant.</p>
+                </div>
+                <div class="card-footer bg-transparent border-0">
+                  <button class="btn btn-primary w-100" data-bs-toggle="modal" data-bs-target="#modalRecette">Voir la recette</button>
+                </div>
+              </article>
             </div>
-            <div class="card-footer bg-transparent border-0">
-              <button class="btn btn-primary w-100" data-bs-toggle="modal" data-bs-target="#modalRecette">Voir la recette</button>
-            </div>
-          </article>
-        </div>
 
-        <!-- Carte 7 -->
-        <div class="col-12 col-md-6 col-lg-4">
-          <article class="card custom-card h-100"
-            data-title="Signature Pistache"
-            data-images='["images/Photo.png","images/Photo.png"]'
-            data-recipe="Crémeux pistache, équilibre et douceur. Recette bientôt disponible.">
-            <img src="images/Photo.png" class="card-img-top" alt="Signature Pistache">
-            <div class="card-body">
-              <h5 class="card-title">Signature Pistache</h5>
-              <p class="card-desc">Pistache délicate et onctueuse.</p>
+            <!-- Carte 6 -->
+            <div class="col-12 col-md-6 col-lg-4">
+              <article class="card custom-card h-100"
+                data-title="Éclat Framboise"
+                data-images='["images/Photo.png","images/Photo.png"]'
+                data-recipe="Acidulé et frais, parfait pour l’été. Recette en cours.">
+                <img src="images/Photo.png" class="card-img-top" alt="Éclat Framboise">
+                <div class="card-body">
+                  <h5 class="card-title">Éclat Framboise</h5>
+                  <p class="card-desc">Fruité et délicatement acidulé.</p>
+                </div>
+                <div class="card-footer bg-transparent border-0">
+                  <button class="btn btn-primary w-100" data-bs-toggle="modal" data-bs-target="#modalRecette">Voir la recette</button>
+                </div>
+              </article>
             </div>
-            <div class="card-footer bg-transparent border-0">
-              <button class="btn btn-primary w-100" data-bs-toggle="modal" data-bs-target="#modalRecette">Voir la recette</button>
-            </div>
-          </article>
-        </div>
 
-        <!-- Carte 8 -->
-        <div class="col-12 col-md-6 col-lg-4">
-          <article class="card custom-card h-100"
-            data-title="Perle Citron"
-            data-images='["images/Photo.png","images/Photo.png"]'
-            data-recipe="Fraîcheur citronnée et meringue légère. Recette en cours.">
-            <img src="images/Photo.png" class="card-img-top" alt="Perle Citron">
-            <div class="card-body">
-              <h5 class="card-title">Perle Citron</h5>
-              <p class="card-desc">Tonique, frais et lumineux.</p>
+            <!-- Carte 7 -->
+            <div class="col-12 col-md-6 col-lg-4">
+              <article class="card custom-card h-100"
+                data-title="Signature Pistache"
+                data-images='["images/Photo.png","images/Photo.png"]'
+                data-recipe="Crémeux pistache, équilibre et douceur. Recette bientôt disponible.">
+                <img src="images/Photo.png" class="card-img-top" alt="Signature Pistache">
+                <div class="card-body">
+                  <h5 class="card-title">Signature Pistache</h5>
+                  <p class="card-desc">Pistache délicate et onctueuse.</p>
+                </div>
+                <div class="card-footer bg-transparent border-0">
+                  <button class="btn btn-primary w-100" data-bs-toggle="modal" data-bs-target="#modalRecette">Voir la recette</button>
+                </div>
+              </article>
             </div>
-            <div class="card-footer bg-transparent border-0">
-              <button class="btn btn-primary w-100" data-bs-toggle="modal" data-bs-target="#modalRecette">Voir la recette</button>
-            </div>
-          </article>
-        </div>
 
-        <!-- Carte 9 -->
-        <div class="col-12 col-md-6 col-lg-4">
-          <article class="card custom-card h-100"
-            data-title="Opaline Café"
-            data-images='["images/Photo.png","images/Photo.png"]'
-            data-recipe="Intensité café sur biscuit moelleux. Recette à venir.">
-            <img src="images/Photo.png" class="card-img-top" alt="Opaline Café">
-            <div class="card-body">
-              <h5 class="card-title">Opaline Café</h5>
-              <p class="card-desc">Intense, équilibré et raffiné.</p>
+            <!-- Carte 8 -->
+            <div class="col-12 col-md-6 col-lg-4">
+              <article class="card custom-card h-100"
+                data-title="Perle Citron"
+                data-images='["images/Photo.png","images/Photo.png"]'
+                data-recipe="Fraîcheur citronnée et meringue légère. Recette en cours.">
+                <img src="images/Photo.png" class="card-img-top" alt="Perle Citron">
+                <div class="card-body">
+                  <h5 class="card-title">Perle Citron</h5>
+                  <p class="card-desc">Tonique, frais et lumineux.</p>
+                </div>
+                <div class="card-footer bg-transparent border-0">
+                  <button class="btn btn-primary w-100" data-bs-toggle="modal" data-bs-target="#modalRecette">Voir la recette</button>
+                </div>
+              </article>
             </div>
-            <div class="card-footer bg-transparent border-0">
-              <button class="btn btn-primary w-100" data-bs-toggle="modal" data-bs-target="#modalRecette">Voir la recette</button>
-            </div>
-          </article>
-        </div>
 
-        <!-- Carte 10 -->
-        <div class="col-12 col-md-6 col-lg-4">
-          <article class="card custom-card h-100"
-            data-title="Mousse Amande"
-            data-images='["images/Photo.png","images/Photo.png"]'
-            data-recipe="Légèreté aux notes d’amande. Recette en cours.">
-            <img src="images/Photo.png" class="card-img-top" alt="Mousse Amande">
-            <div class="card-body">
-              <h5 class="card-title">Mousse Amande</h5>
-              <p class="card-desc">Douce, légère et onctueuse.</p>
+            <!-- Carte 9 -->
+            <div class="col-12 col-md-6 col-lg-4">
+              <article class="card custom-card h-100"
+                data-title="Opaline Café"
+                data-images='["images/Photo.png","images/Photo.png"]'
+                data-recipe="Intensité café sur biscuit moelleux. Recette à venir.">
+                <img src="images/Photo.png" class="card-img-top" alt="Opaline Café">
+                <div class="card-body">
+                  <h5 class="card-title">Opaline Café</h5>
+                  <p class="card-desc">Intense, équilibré et raffiné.</p>
+                </div>
+                <div class="card-footer bg-transparent border-0">
+                  <button class="btn btn-primary w-100" data-bs-toggle="modal" data-bs-target="#modalRecette">Voir la recette</button>
+                </div>
+              </article>
             </div>
-            <div class="card-footer bg-transparent border-0">
-              <button class="btn btn-primary w-100" data-bs-toggle="modal" data-bs-target="#modalRecette">Voir la recette</button>
-            </div>
-          </article>
-        </div>
 
-        <!-- Carte 11 -->
-        <div class="col-12 col-md-6 col-lg-4">
-          <article class="card custom-card h-100"
-            data-title="Satin Noisette"
-            data-images='["images/Photo.png","images/Photo.png"]'
-            data-recipe="Glaçage brillant et cœur praliné. Recette bientôt en ligne.">
-            <img src="images/Photo.png" class="card-img-top" alt="Satin Noisette">
-            <div class="card-body">
-              <h5 class="card-title">Satin Noisette</h5>
-              <p class="card-desc">Praliné intense & texture lisse.</p>
+            <!-- Carte 10 -->
+            <div class="col-12 col-md-6 col-lg-4">
+              <article class="card custom-card h-100"
+                data-title="Mousse Amande"
+                data-images='["images/Photo.png","images/Photo.png"]'
+                data-recipe="Légèreté aux notes d’amande. Recette en cours.">
+                <img src="images/Photo.png" class="card-img-top" alt="Mousse Amande">
+                <div class="card-body">
+                  <h5 class="card-title">Mousse Amande</h5>
+                  <p class="card-desc">Douce, légère et onctueuse.</p>
+                </div>
+                <div class="card-footer bg-transparent border-0">
+                  <button class="btn btn-primary w-100" data-bs-toggle="modal" data-bs-target="#modalRecette">Voir la recette</button>
+                </div>
+              </article>
             </div>
-            <div class="card-footer bg-transparent border-0">
-              <button class="btn btn-primary w-100" data-bs-toggle="modal" data-bs-target="#modalRecette">Voir la recette</button>
-            </div>
-          </article>
-        </div>
 
-        <!-- Carte 12 -->
-        <div class="col-12 col-md-6 col-lg-4">
-          <article class="card custom-card h-100"
-            data-title="Étoile Coco"
-            data-images='["images/Photo.png","images/Photo.png"]'
-            data-recipe="Exotique et fondant, aux notes de coco. Recette à venir.">
-            <img src="images/Photo.png" class="card-img-top" alt="Étoile Coco">
-            <div class="card-body">
-              <h5 class="card-title">Étoile Coco</h5>
-              <p class="card-desc">Exotique, doux et fondant.</p>
+            <!-- Carte 11 -->
+            <div class="col-12 col-md-6 col-lg-4">
+              <article class="card custom-card h-100"
+                data-title="Satin Noisette"
+                data-images='["images/Photo.png","images/Photo.png"]'
+                data-recipe="Glaçage brillant et cœur praliné. Recette bientôt en ligne.">
+                <img src="images/Photo.png" class="card-img-top" alt="Satin Noisette">
+                <div class="card-body">
+                  <h5 class="card-title">Satin Noisette</h5>
+                  <p class="card-desc">Praliné intense & texture lisse.</p>
+                </div>
+                <div class="card-footer bg-transparent border-0">
+                  <button class="btn btn-primary w-100" data-bs-toggle="modal" data-bs-target="#modalRecette">Voir la recette</button>
+                </div>
+              </article>
             </div>
-            <div class="card-footer bg-transparent border-0">
-              <button class="btn btn-primary w-100" data-bs-toggle="modal" data-bs-target="#modalRecette">Voir la recette</button>
+
+            <!-- Carte 12 -->
+            <div class="col-12 col-md-6 col-lg-4">
+              <article class="card custom-card h-100"
+                data-title="Étoile Coco"
+                data-images='["images/Photo.png","images/Photo.png"]'
+                data-recipe="Exotique et fondant, aux notes de coco. Recette à venir.">
+                <img src="images/Photo.png" class="card-img-top" alt="Étoile Coco">
+                <div class="card-body">
+                  <h5 class="card-title">Étoile Coco</h5>
+                  <p class="card-desc">Exotique, doux et fondant.</p>
+                </div>
+                <div class="card-footer bg-transparent border-0">
+                  <button class="btn btn-primary w-100" data-bs-toggle="modal" data-bs-target="#modalRecette">Voir la recette</button>
+                </div>
+              </article>
             </div>
-          </article>
+          </section>
         </div>
-      </div>
+      </section>
     </main>
 
-    <!-- MODAL unique (images + recette) -->
+    <!-- MODAL -->
     <div class="modal fade" id="modalRecette" tabindex="-1" aria-hidden="true">
       <div class="modal-dialog modal-lg modal-dialog-centered">
         <div class="modal-content">
@@ -255,7 +258,6 @@
             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Fermer"></button>
           </div>
           <div class="modal-body">
-            <!-- Carrousel -->
             <div id="modalCarousel" class="carousel slide mb-3" data-bs-ride="false">
               <div class="carousel-inner" id="carouselInner"></div>
               <button class="carousel-control-prev" type="button" data-bs-target="#modalCarousel" data-bs-slide="prev">
@@ -265,20 +267,20 @@
                 <span class="carousel-control-next-icon"></span>
               </button>
             </div>
-            <!-- Recette -->
             <div id="modalRecipe" class="modal-recipe text-muted"></div>
           </div>
         </div>
       </div>
     </div>
 
-    <!-- FOOTER (inchangé) -->
+    <!-- FOOTER -->
     <footer>
       <div class="footer-container">
         <div class="footer-about">
           <h3>À propos</h3>
           <p>Bienvenue dans l'univers de Lorie, où chaque pâtisserie est faite avec passion et gourmandise.</p>
         </div>
+
         <div class="footer-links">
           <h3>Liens utiles</h3>
           <ul>
@@ -287,6 +289,7 @@
             <li><a href="contact.html">Contact</a></li>
           </ul>
         </div>
+
         <div class="footer-contact">
           <h3>Contact</h3>
           <p>Email : <a href="mailto:loriedepoot@gmail.com">loriedepoot@gmail.com</a></p>
@@ -306,49 +309,8 @@
 
   <!-- JS -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
-  <script>
-    // Burger menu
-    const burger = document.getElementById("burgerBtn");
-    const nav = document.getElementById("navMenu");
-    if (burger) {
-      burger.addEventListener("click", () => {
-        burger.classList.toggle("active");
-        nav.classList.toggle("active");
-      });
-      burger.addEventListener("keypress", (e) => {
-        if (e.key === "Enter") {
-          burger.classList.toggle("active");
-          nav.classList.toggle("active");
-        }
-      });
-    }
+  <script src="menu.js"></script>
+  <script src="realisations.js"></script>
 
-    // Modal dynamique (images + recette)
-    const recetteModal = document.getElementById('modalRecette');
-    recetteModal.addEventListener('show.bs.modal', (event) => {
-      const button = event.relatedTarget;
-      const card = button.closest('.custom-card');
-
-      const title = card.dataset.title || 'Recette';
-      const recipe = card.dataset.recipe || 'Recette en cours d’écriture.';
-      let images = [];
-      try { images = JSON.parse(card.dataset.images || '[]'); } catch (e) { images = []; }
-
-      document.getElementById('modalTitle').textContent = title;
-      document.getElementById('modalRecipe').textContent = recipe;
-
-      // Build carousel
-      const inner = document.getElementById('carouselInner');
-      inner.innerHTML = '';
-      if (images.length === 0) images = ['images/Photo.png'];
-
-      images.forEach((src, idx) => {
-        const item = document.createElement('div');
-        item.className = 'carousel-item' + (idx === 0 ? ' active' : '');
-        item.innerHTML = `<img src="${src}" class="d-block w-100 modal-img" alt="${title} - ${idx+1}">`;
-        inner.appendChild(item);
-      });
-    });
-  </script>
 </body>
 </html>

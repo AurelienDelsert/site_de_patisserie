@@ -8,13 +8,13 @@
 }
 
 html, body {
-  height: auto;
   min-height: 100%;
   font-family: 'Arial', sans-serif;
-  display: block;
-  background: url("images/image fond patisserie.jpg") no-repeat center center;
-  background-attachment: scroll;
+  display: flex;
+  flex-direction: column;
+  background: url("images/image fond patisserie.jpg") no-repeat center top;
   background-size: cover;
+  background-attachment: scroll; /* 👈 fond qui suit le défilement */
   color: #3a2e2a;
   overflow-x: hidden;
 }
@@ -33,7 +33,7 @@ a {
 }
 
 /* ==========================
-   HEADER
+   HEADER (identique modèle)
 ========================== */
 header {
   width: 100%;
@@ -70,7 +70,6 @@ header {
   color: #d4a373;
 }
 
-/* NAVIGATION */
 .nav {
   display: flex;
   justify-content: center;
@@ -82,7 +81,6 @@ header {
   font-size: 17px;
   color: #3a2e2a;
   font-weight: 600;
-  text-decoration: none;
   padding: 8px 0;
   transition: color 0.3s ease;
 }
@@ -106,7 +104,7 @@ header {
   width: 100%;
 }
 
-/* BURGER MENU (mobile) */
+/* BURGER MENU */
 .burger {
   display: none;
   flex-direction: column;
@@ -152,7 +150,6 @@ header {
   font-family: 'Playfair Display', serif;
   font-size: clamp(30px, 5vw, 50px);
   font-weight: bold;
-  text-align: center;
   margin-bottom: 40px;
   color: #6b4226;
   position: relative;
@@ -186,15 +183,6 @@ header {
   padding: 40px 20px;
 }
 
-.about-containers {
-  width: 100%;
-  max-width: 1000px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-}
-
 .card {
   background: rgba(255, 255, 255, 0.92);
   backdrop-filter: blur(10px);
@@ -215,8 +203,9 @@ header {
 
 .about-image img {
   border-radius: 50%;
-  width: 230px;
-  height: 230px;
+  width: 100%;
+  max-width: 230px;
+  height: auto;
   object-fit: cover;
   margin-bottom: 25px;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
@@ -265,7 +254,7 @@ header {
 }
 
 /* ==========================
-   FOOTER
+   FOOTER (identique modèle)
 ========================== */
 footer {
   width: 100%;
@@ -358,36 +347,19 @@ footer a:hover {
 
 /* Tablette */
 @media (max-width: 992px) {
-  .nav {
-    gap: 20px;
-  }
-
-  #h1Contenu {
-    font-size: 2rem;
-  }
-
-  .card {
-    padding: 30px;
-  }
-
-  .about-text p {
-    font-size: 16px;
-  }
+  .nav { gap: 20px; }
+  #h1Contenu { font-size: 2rem; }
+  .card { padding: 30px; }
 }
 
 /* Smartphone */
 @media (max-width: 768px) {
-  header {
-    padding: 15px 20px;
-  }
-
-  .burger {
-    display: flex;
-  }
+  header { padding: 15px 20px; }
+  .burger { display: flex; }
 
   .nav {
     position: absolute;
-    top: 140px;
+    top: 100%;
     right: 0;
     width: 100%;
     flex-direction: column;
@@ -401,67 +373,20 @@ footer a:hover {
     transition: all 0.4s ease;
   }
 
-  .nav.active {
-    transform: translateY(0);
-    opacity: 1;
-  }
+  .nav.active { transform: translateY(0); opacity: 1; }
 
-  #h1Contenu {
-    font-size: 1.8rem;
-    margin-bottom: 20px;
-  }
+  #h1Contenu { font-size: 1.8rem; margin-bottom: 20px; }
+  .about-text p { text-align: center; }
+  .btn-real { width: 80%; }
 
-  .card {
-    padding: 20px;
-  }
-
-  .about-image img {
-    width: 160px;
-    height: 160px;
-  }
-
-  .about-text h2 {
-    font-size: 22px;
-  }
-
-  .about-text p {
-    font-size: 15px;
-    text-align: center;
-  }
-
-  .btn-real {
-    width: 80%;
-    font-size: 16px;
-  }
-
-  .footer-container {
-    flex-direction: column;
-    text-align: center;
-    align-items: center;
-  }
-
-  .footer-container div {
-    flex: 1 1 100%;
-    margin-bottom: 30px;
-  }
-
-  .socials {
-    justify-content: center;
-  }
+  .footer-container { flex-direction: column; text-align: center; }
+  .socials { justify-content: center; }
 }
 
 /* Très petits écrans */
 @media (max-width: 480px) {
-  #h1Header {
-    font-size: 1.8rem;
-  }
-
-  #h1Contenu {
-    font-size: 1.5rem;
-  }
-
-  .btn-real {
-    padding: 12px 25px;
-    font-size: 15px;
-  }
+  #h1Header { font-size: 1.8rem; }
+  #h1Contenu { font-size: 1.5rem; }
+  .btn-real { padding: 12px 25px; font-size: 15px; }
+  .about-image img { max-width: 140px; }
 }

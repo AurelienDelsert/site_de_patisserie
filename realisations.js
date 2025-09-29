@@ -1,16 +1,35 @@
-const bg = document.querySelector('.background-parallax');
+// ----- Modal dynamique -----
+document.addEventListener("DOMContentLoaded", () => {
+  const recetteModal = document.getElementById("modalRecette");
+  if (!recetteModal) return; // Sécurité si la modale n'existe pas
 
-window.addEventListener('scroll', () => {
-  const scrollTop = window.scrollY;
-  const headerHeight = document.querySelector('header').offsetHeight;
-  const footerOffset = document.querySelector('footer').offsetTop;
+  recetteModal.addEventListener("show.bs.modal", (event) => {
+    const button = event.relatedTarget;
+    const card = button.closest(".custom-card");
 
-  const maxTranslate = footerOffset - headerHeight - bg.offsetHeight;
-  // Parallax léger : diviser le scroll pour effet fluide
-  let translateY = scrollTop * 0.3;
+    const title = card.dataset.title || "Recette";
+    const recipe = card.dataset.recipe || "Recette en cours d’écriture.";
 
-  if (translateY > maxTranslate) translateY = maxTranslate;
-  if (translateY < 0) translateY = 0;
+    let images = [];
+    try {
+      images = JSON.parse(card.dataset.images || "[]");
+    } catch (e) {
+      images = [];
+    }
 
-  bg.style.transform = `translateY(${translateY}px)`;
+    document.getElementById("modalTitle").textContent = title;
+    document.getElementById("modalRecipe").textContent = recipe;
+
+    const inner = document.getElementById("carouselInner");
+    inner.innerHTML = "";
+
+    if (images.length === 0) images = ["images/Photo.png"];
+
+    images.forEach((src, idx) => {
+      const item = document.createElement("div");
+      item.className = "carousel-item" + (idx === 0 ? " active" : "");
+      item.innerHTML = `<img src="${src}" class="d-block w-100 modal-img" alt="${title} - ${idx + 1}">`;
+      inner.appendChild(item);
+    });
+  });
 });

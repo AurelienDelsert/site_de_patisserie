@@ -3,22 +3,31 @@
 ========================== */
 * { margin: 0; padding: 0; box-sizing: border-box; }
 
-body {
+html, body {
   font-family: 'Arial', sans-serif;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
+
+  /* 🖼️ Image toujours visible en arrière-plan */
   background: url("images/image fond patisserie.jpg") no-repeat center center fixed;
-  background-size: cover;
+  background-size: cover; /* ✅ Remplit tout l’écran, sans espaces */
   color: #3a2e2a;
+  overflow-x: hidden;
 }
+
+
 
 a { text-decoration: none; }
 
 /* ==========================
    WRAPPER
 ========================== */
-.main-wrapper { flex: 1; display: flex; flex-direction: column; }
+.main-wrapper { 
+  flex: 1; 
+  display: flex; 
+  flex-direction: column; 
+}
 
 /* ==========================
    HEADER (inchangé)
@@ -29,16 +38,46 @@ header {
   background: rgba(255, 255, 255, 0.85);
   backdrop-filter: blur(10px);
   box-shadow: 0 4px 20px rgba(0,0,0,0.08);
-  position: fixed; top: 0; left: 0; z-index: 1000;
-  display: flex; justify-content: center; align-items: center; flex-direction: column; gap: 10px;
+  position: fixed; 
+  top: 0; 
+  left: 0; 
+  z-index: 1000;
+  display: flex; 
+  justify-content: center; 
+  align-items: center; 
+  flex-direction: column; 
+  gap: 10px;
 }
+
 .header-content { width: 100%; max-width: 1200px; text-align: center; }
-#h1Header { font-family: 'Pacifico', cursive; font-size: clamp(28px, 5vw, 42px); color: #6b4226; letter-spacing: 1px; transition: color .3s; }
+#h1Header { 
+  font-family: 'Pacifico', cursive; 
+  font-size: clamp(28px, 5vw, 42px); 
+  color: #6b4226; 
+  letter-spacing: 1px; 
+  transition: color .3s; 
+}
 #h1Header:hover { color: #d4a373; }
 
 .nav { display: flex; justify-content: center; gap: 30px; }
-.nav a { position: relative; font-size: 17px; color: #3a2e2a; font-weight: 600; padding: 8px 0; transition: color .3s; }
-.nav a::after { content: ""; position: absolute; bottom: -4px; left: 0; width: 0; height: 2px; background: linear-gradient(135deg,#f8c8dc,#d4a373); transition: width .3s; }
+.nav a { 
+  position: relative; 
+  font-size: 17px; 
+  color: #3a2e2a; 
+  font-weight: 600; 
+  padding: 8px 0; 
+  transition: color .3s; 
+}
+.nav a::after { 
+  content: ""; 
+  position: absolute; 
+  bottom: -4px; 
+  left: 0; 
+  width: 0; 
+  height: 2px; 
+  background: linear-gradient(135deg,#f8c8dc,#d4a373); 
+  transition: width .3s; 
+}
 .nav a:hover { color: #d4a373; }
 .nav a:hover::after { width: 100%; }
 
@@ -73,7 +112,7 @@ header {
 }
 
 /* ==========================
-   CARDS (élégantes, hauteur fixe)
+   CARDS
 ========================== */
 .card.custom-card{
   border: none;
@@ -85,7 +124,7 @@ header {
   transition: transform .25s ease, box-shadow .25s ease;
   display: flex;
   flex-direction: column;
-  min-height: 430px; /* hauteur fixe confortable */
+  min-height: 430px;
 }
 .card.custom-card:hover{
   transform: translateY(-5px);
@@ -94,12 +133,12 @@ header {
 
 .card-img-top{
   width: 100%;
-  height: 220px; /* image fixe */
+  height: 220px;
   object-fit: cover;
 }
 
 .card-body{
-  flex: 1; /* pousse le footer en bas */
+  flex: 1;
   padding: 20px 22px;
   text-align: center;
 }
@@ -115,7 +154,7 @@ header {
   font-size: .98rem;
   color: #5a3a2d;
   margin: 0 auto;
-  max-width: 28ch; /* lisible, lignes courtes */
+  max-width: 28ch;
 }
 
 .card-footer{
@@ -140,7 +179,7 @@ header {
 }
 
 /* ==========================
-   MODAL (images + recette)
+   MODAL
 ========================== */
 .modal-content{
   border-radius: 18px;

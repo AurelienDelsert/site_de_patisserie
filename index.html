@@ -17,6 +17,9 @@
 </head>
 <body>
 
+  <!-- Effet parallax -->
+  <div class="background-parallax"></div>
+
   <div class="main-wrapper">
 
     <!-- HEADER -->
@@ -104,26 +107,9 @@
     </footer>
   </div>
 
-  <!-- SCRIPT -->
-  <script>
-    const burger = document.getElementById("burgerBtn");
-    const nav = document.getElementById("navMenu");
+  <!-- JS -->
+  <script src="menu.js"></script>
+  <script src="index.js"></script>
 
-    burger.addEventListener("click", () => {
-      burger.classList.toggle("active");
-      nav.classList.toggle("active");
-    });
-
-    // Apparition au scroll
-    const reveals = document.querySelectorAll('.reveal');
-    window.addEventListener('scroll', () => {
-      reveals.forEach(el => {
-        const rect = el.getBoundingClientRect();
-        if (rect.top < window.innerHeight - 100) {
-          el.classList.add('show');
-        }
-      });
-    });
-  </script>
 </body>
 </html>

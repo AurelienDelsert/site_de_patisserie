@@ -1,4 +1,6 @@
-/* RESET */
+/* ==========================
+   RESET & BASE
+========================== */
 * {
   margin: 0;
   padding: 0;
@@ -6,15 +8,30 @@
 }
 
 html, body {
-  min-height: 100%;
   font-family: 'Arial', sans-serif;
-  background: url("images/image fond patisserie.jpg") no-repeat center center;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+
+  /* 🖼️ Fond qui défile avec le scroll */
+  background: url("images/image fond patisserie.jpg") no-repeat center top;
   background-size: cover;
+  background-attachment: scroll; /* 👈 c’est la clé */
+  background-position: center top;
+  background-repeat: no-repeat;
+
   color: #3a2e2a;
   overflow-x: hidden;
 }
 
-/* HEADER */
+
+a {
+  text-decoration: none;
+}
+
+/* ==========================
+   HEADER (identique modèle)
+========================== */
 header {
   width: 100%;
   padding: 20px 40px;
@@ -43,6 +60,11 @@ header {
   font-size: clamp(28px, 5vw, 42px);
   color: #6b4226;
   letter-spacing: 1px;
+  transition: color 0.3s ease;
+}
+
+#h1Header:hover {
+  color: #d4a373;
 }
 
 .nav {
@@ -58,10 +80,7 @@ header {
   font-weight: 600;
   text-decoration: none;
   padding: 8px 0;
-}
-
-.nav a:hover {
-  color: #d4a373;
+  transition: color 0.3s ease;
 }
 
 .nav a::after {
@@ -73,6 +92,10 @@ header {
   height: 2px;
   background: linear-gradient(135deg, #f8c8dc, #d4a373);
   transition: width 0.3s ease;
+}
+
+.nav a:hover {
+  color: #d4a373;
 }
 
 .nav a:hover::after {
@@ -95,18 +118,25 @@ header {
   transition: all 0.3s ease;
 }
 
-/* MAIN */
+.burger.active span:nth-child(1) { transform: rotate(45deg) translateY(8px); }
+.burger.active span:nth-child(2) { opacity: 0; }
+.burger.active span:nth-child(3) { transform: rotate(-45deg) translateY(-8px); }
+
+/* ==========================
+   MAIN CONTENT
+========================== */
 main {
   min-height: 100vh;
   padding: 160px 20px 60px;
   display: flex;
   justify-content: center;
-  align-items: center; /* ✅ centrage vertical */
+  align-items: center;
   text-align: center;
 }
 
-
-/* FORMULAIRE */
+/* ==========================
+   FORMULAIRE DE CONTACT
+========================== */
 .contact-box {
   background: rgba(255, 255, 255, 0.92);
   padding: 40px;
@@ -183,7 +213,9 @@ main {
   border-radius: 8px;
 }
 
-/* BOUTON */
+/* ==========================
+   BOUTON
+========================== */
 .btn-submit {
   display: inline-flex;
   align-items: center;
@@ -207,7 +239,9 @@ main {
   transform: translateY(-3px) scale(1.05);
 }
 
-/* FOOTER */
+/* ==========================
+   FOOTER (identique modèle)
+========================== */
 footer {
   width: 100%;
   background: rgba(255, 255, 255, 0.85);
@@ -299,36 +333,17 @@ footer a:hover {
 
 /* Tablette */
 @media (max-width: 992px) {
-  .nav {
-    gap: 20px;
-  }
-
-  #h1Contenu {
-    font-size: 2rem;
-  }
-
-  .card {
-    padding: 30px;
-  }
-
-  .about-text p {
-    font-size: 16px;
-  }
+  .nav { gap: 20px; }
 }
 
 /* Smartphone */
 @media (max-width: 768px) {
-  header {
-    padding: 15px 20px;
-  }
-
-  .burger {
-    display: flex;
-  }
+  header { padding: 15px 20px; }
+  .burger { display: flex; }
 
   .nav {
     position: absolute;
-    top: 140px;
+    top: 100%;
     right: 0;
     width: 100%;
     flex-direction: column;
@@ -342,38 +357,10 @@ footer a:hover {
     transition: all 0.4s ease;
   }
 
-  .nav.active {
-    transform: translateY(0);
-    opacity: 1;
-  }
+  .nav.active { transform: translateY(0); opacity: 1; }
 
-  #h1Contenu {
-    font-size: 1.8rem;
-    margin-bottom: 20px;
-  }
-
-  .card {
-    padding: 20px;
-  }
-
-  .about-image img {
-    width: 160px;
-    height: 160px;
-  }
-
-  .about-text h2 {
-    font-size: 22px;
-  }
-
-  .about-text p {
-    font-size: 15px;
-    text-align: center;
-  }
-
-  .btn-real {
-    width: 80%;
-    font-size: 16px;
-  }
+  .contact-box { padding: 30px; }
+  .btn-submit { font-size: 16px; }
 
   .footer-container {
     flex-direction: column;
@@ -386,23 +373,12 @@ footer a:hover {
     margin-bottom: 30px;
   }
 
-  .socials {
-    justify-content: center;
-  }
+  .socials { justify-content: center; }
 }
 
 /* Très petits écrans */
 @media (max-width: 480px) {
-  #h1Header {
-    font-size: 1.8rem;
-  }
-
-  #h1Contenu {
-    font-size: 1.5rem;
-  }
-
-  .btn-real {
-    padding: 12px 25px;
-    font-size: 15px;
-  }
+  #h1Header { font-size: 1.8rem; }
+  .contact-box { padding: 20px; }
+  .btn-submit { padding: 12px 25px; font-size: 15px; }
 }
