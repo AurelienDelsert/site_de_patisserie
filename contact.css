@@ -338,8 +338,80 @@ footer a:hover {
 
 /* Smartphone */
 @media (max-width: 768px) {
-  header { padding: 15px 20px; }
-  .burger { display: flex; }
+  
+  /* --- HEADER responsive mobile --- */
+  header {
+    padding: 12px 20px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+  }
+
+  .header-content {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+  }
+
+  #h1Header {
+    font-size: 1.6rem;
+    text-align: left;
+    max-width: 80%;
+    line-height: 1.2;
+  }
+
+  .burger {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 5px;
+    cursor: pointer;
+    z-index: 1100;
+  }
+
+  .burger span {
+    width: 26px;
+    height: 3px;
+    background: #6b4226;
+    border-radius: 2px;
+    transition: all 0.3s ease;
+  }
+
+  /* --- NAVIGATION en version mobile --- */
+  .nav {
+    position: absolute;
+    top: 100%;
+    right: 0;
+    width: 100%;
+    flex-direction: column;
+    align-items: center;
+    background: rgba(255, 255, 255, 0.97);
+    padding: 25px 0;
+    gap: 25px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+    transform: translateY(-200%);
+    opacity: 0;
+    transition: all 0.4s ease;
+    z-index: 1000;
+  }
+
+  .nav.active {
+    transform: translateY(0);
+    opacity: 1;
+  }
+
+  .nav a {
+    font-size: 1.2rem;
+    padding: 10px 0;
+  }
+
+  .nav a::after {
+    display: none; /* 👈 on enlève l'effet souligné sur mobile pour plus de lisibilité */
+  }
+
+  .burger {
+     display: flex; 
+    }
 
   /* --- Footer responsive sur mobile --- */
   .footer-container {
@@ -396,40 +468,13 @@ footer a:hover {
   padding-bottom: 20px;
   }
 
-
-  .nav {
-    position: absolute;
-    top: 100%;
-    right: 0;
-    width: 100%;
-    flex-direction: column;
-    align-items: center;
-    gap: 20px;
-    background: rgba(255, 255, 255, 0.95);
-    padding: 20px 0;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
-    transform: translateY(-200%);
-    opacity: 0;
-    transition: all 0.4s ease;
+  .contact-box {
+    padding: 20px; /* au lieu de 30px pour ne pas coller aux bords */
   }
 
-  .nav.active { transform: translateY(0); opacity: 1; }
-
-  .contact-box { padding: 30px; }
-  .btn-submit { font-size: 16px; }
-
-  .footer-container {
-    flex-direction: column;
-    text-align: center;
-    align-items: center;
+  .btn-submit {
+    font-size: 14px; /* un peu plus petit pour mobile */
   }
-
-  .footer-container div {
-    flex: 1 1 100%;
-    margin-bottom: 30px;
-  }
-
-  .socials { justify-content: center; }
 }
 
 /* Très petits écrans */
