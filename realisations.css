@@ -488,7 +488,11 @@ footer a:hover{ color:#d4a373;}
 @media (max-width: 480px) {
 
   #h1Header {
-    font-size: 1.4rem;
+    font-size: 1.3rem;
+    line-height: 1.4;
+    text-align: center;
+    max-width: 90%;
+    margin: 0 auto;
   }
 
   .page-title {

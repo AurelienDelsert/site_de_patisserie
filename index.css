@@ -611,7 +611,11 @@ footer a:hover {
   }
 
   #h1Header {
-    font-size: 1.4rem;
+    font-size: 1.3rem;
+    line-height: 1.4;
+    text-align: center;
+    max-width: 90%;
+    margin: 0 auto;
   }
 
   #h1Contenu {
