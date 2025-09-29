@@ -47,6 +47,7 @@ header {
   align-items: center; 
   flex-direction: column; 
   gap: 10px;
+  animation: fadeDown 0.8s ease forwards;
 }
 
 .header-content { width: 100%; max-width: 1200px; text-align: center; }
@@ -82,8 +83,30 @@ header {
 .nav a:hover::after { width: 100%; }
 
 /* BURGER (mobile) */
-.burger { display: none; flex-direction: column; gap: 5px; cursor: pointer; }
-.burger span { width: 28px; height: 3px; background: #6b4226; border-radius: 2px; transition: all .3s; }
+.burger { 
+  display: none; 
+  flex-direction: column; 
+  gap: 5px; 
+  cursor: pointer;
+  touch-action: manipulation; /* ✅ Améliore la réactivité tactile */
+}
+
+
+.burger span {
+  width: 28px;
+  height: 3px; 
+  background: #6b4226; 
+  border-radius: 2px; 
+  transition: all .3s; 
+  will-change: transform, background;
+}
+
+/* Effet de survol burger */
+.burger:hover span {
+  background: #d9885b;
+  transform: scaleX(1.1);
+}
+
 .burger.active span:nth-child(1){ transform: rotate(45deg) translateY(8px); }
 .burger.active span:nth-child(2){ opacity: 0; }
 .burger.active span:nth-child(3){ transform: rotate(-45deg) translateY(-8px); }
@@ -231,12 +254,13 @@ footer a:hover{ color:#d4a373;}
   border-top:1px solid rgba(0,0,0,0.1);
 }
 
-/* Animation au scroll */
 .card.custom-card {
   opacity: 0;
   transform: translateY(40px);
-  transition: opacity 0.8s ease, transform 0.8s ease;
+  transition: opacity 0.8s cubic-bezier(0.23, 1, 0.32, 1),
+              transform 0.8s cubic-bezier(0.23, 1, 0.32, 1);
 }
+
 
 .card.custom-card.visible {
   opacity: 1;
