@@ -417,6 +417,10 @@ footer a:hover {
   .about-text p {
     text-align: center; /* 👈 centre les paragraphes */
   }
+
+  .footer-container {
+    text-align: center;
+  }
 }
 
 /* Très petits écrans */
