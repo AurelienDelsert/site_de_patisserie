@@ -17,61 +17,74 @@
 </head>
 
 <body>
+  
   <!-- HEADER -->
   <header>
     <div class="header-content">
-      <h1 id="h1Header"><i class="bi bi-cupcake-fill"></i><i class="bi bi-stars"></i> L'univers de Lorie <i class="bi bi-stars"></i></h1>
+      <h1 id="h1Header">
+        <i class="bi bi-cupcake-fill"></i><i class="bi bi-stars"></i> L'univers de Lorie <i class="bi bi-stars"></i>
+      </h1>
 
+      <!-- ✅ Burger en 2e position -->
+      <div class="burger" id="burgerBtn" aria-label="Menu mobile" role="button" tabindex="0">
+        <span></span><span></span><span></span>
+      </div>
+
+      <!-- ✅ Menu en dernier -->
       <nav class="nav" id="navMenu">
         <a href="index.html">Accueil</a>
         <a href="realisations.html">Réalisations</a>
         <a href="contact.html">Contact</a>
       </nav>
-
-      <!-- Burger -->
-      <div class="burger" id="burgerBtn" aria-label="Menu mobile" role="button" tabindex="0">
-        <span></span><span></span><span></span>
-      </div>
     </div>
   </header>
 
+
   <!-- MAIN -->
   <main>
-    <section class="contact-box">
-      <form class="contact-form">
-        <h2>🍩 Contactez-moi 🍰</h2>
-        <p class="form-intro">Une question, une envie sucrée ? Envoyez-moi un petit message !</p>
 
-        <div class="group">
-          <i class="bi bi-person-fill"></i>
-          <input type="text" name="name" required />
-          <label>Nom*</label>
-        </div>
+    <!-- ✅ Section principale -->
+    <section class="contact-section">
 
-        <div class="group">
-          <i class="bi bi-envelope-fill"></i>
-          <input type="email" name="email" required />
-          <label>Email*</label>
-        </div>
+      <!-- ✅ Boîte du formulaire -->
+      <div class="contact-box">
+        <form class="contact-form">
+          <h2>🍩 Envoyez-moi un message 🍰</h2>
+          <p class="form-intro">Une question, une envie sucrée ? Remplissez ce petit formulaire ✉️</p>
 
-        <div class="group">
-          <i class="bi bi-telephone-fill"></i>
-          <input type="tel" name="phone" required />
-          <label>Téléphone*</label>
-        </div>
+          <div class="group">
+            <i class="bi bi-person-fill"></i>
+            <input type="text" name="name" required />
+            <label>Nom*</label>
+          </div>
 
-        <div class="group">
-          <i class="bi bi-chat-dots-fill"></i>
-          <textarea name="message" rows="4" required></textarea>
-          <label>Message*</label>
-        </div>
+          <div class="group">
+            <i class="bi bi-envelope-fill"></i>
+            <input type="email" name="email" required />
+            <label>Email*</label>
+          </div>
 
-        <button type="submit" class="btn-submit">
-          <i class="bi bi-send-fill"></i> Envoyer mon message
-        </button>
-      </form>
+          <div class="group">
+            <i class="bi bi-telephone-fill"></i>
+            <input type="tel" name="phone" required />
+            <label>Téléphone*</label>
+          </div>
+
+          <div class="group">
+            <i class="bi bi-chat-dots-fill"></i>
+            <textarea name="message" rows="4" required></textarea>
+            <label>Message*</label>
+          </div>
+
+          <button type="submit" class="btn-submit">
+            <i class="bi bi-send-fill"></i> Envoyer mon message
+          </button>
+        </form>
+
+      </div>
     </section>
   </main>
+
 
   <!-- FOOTER -->
   <footer>

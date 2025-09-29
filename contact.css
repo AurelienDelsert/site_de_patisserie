@@ -118,6 +118,13 @@ header {
   transition: all 0.3s ease;
 }
 
+/* Effet de survol pour le burger - plus moderne */
+.burger:hover span {
+  background: #d9885b;
+  transform: scaleX(1.1);
+}
+
+
 .burger.active span:nth-child(1) { transform: rotate(45deg) translateY(8px); }
 .burger.active span:nth-child(2) { opacity: 0; }
 .burger.active span:nth-child(3) { transform: rotate(-45deg) translateY(-8px); }
@@ -239,6 +246,31 @@ main {
   transform: translateY(-3px) scale(1.05);
 }
 
+/* ----- Animation d'apparition ----- */
+.page-title,
+.contact-box,
+.contact-info,
+.contact-section {
+  opacity: 0;
+  transform: translateY(40px);
+   transition: opacity 0.8s cubic-bezier(0.23, 1, 0.32, 1), 
+               transform 0.8s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+.page-title.visible,
+.contact-box.visible,
+.contact-info.visible,
+.contact-section.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* (Optionnel) effet cascade */
+.page-title.visible { transition-delay: 0.2s; }
+.contact-box.visible { transition-delay: 0.4s; }
+.contact-info.visible { transition-delay: 0.6s; }
+
+
 /* ==========================
    FOOTER (identique modèle)
 ========================== */
@@ -327,6 +359,22 @@ footer a:hover {
   border-top: 1px solid rgba(0, 0, 0, 0.1);
 }
 
+header {
+  animation: fadeDown 0.8s ease forwards;
+}
+
+@keyframes fadeDown {
+  0% {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+
 /* ==========================
 📲 TABLETTE (769px - 1024px)
 ========================== */
@@ -409,41 +457,46 @@ footer a:hover {
 
   .header-content {
     display: flex;
-    flex-direction: row;
-    justify-content: space-between;
+    flex-direction: column; /* ✅ colonne pour centrer */
+    justify-content: center;
     align-items: center;
     width: 100%;
+    text-align: center;
   }
 
   #h1Header {
-    font-size: 1.6rem;
-    text-align: left;
-    max-width: 80%;
-    line-height: 1.2;
+    font-size: 1.7rem;
+    text-align: center;
+    max-width: 90%;
+    line-height: 1.3;
+    margin-bottom: 12px; /* espace sous le titre */
   }
 
+  /* === BURGER sous le titre === */
   .burger {
     display: flex;
     flex-direction: column;
+    align-items: center;
     justify-content: center;
     gap: 5px;
     cursor: pointer;
     z-index: 1100;
+    margin-bottom: 8px;
   }
 
   .burger span {
-    width: 26px;
+    width: 28px;
     height: 3px;
     background: #6b4226;
     border-radius: 2px;
     transition: all 0.3s ease;
   }
 
-  /* === MENU MOBILE === */
+    /* === MENU MOBILE === */
   .nav {
     position: absolute;
     top: 100%;
-    right: 0;
+    left: 0;
     width: 100%;
     flex-direction: column;
     align-items: center;
@@ -455,6 +508,7 @@ footer a:hover {
     opacity: 0;
     transition: all 0.4s ease;
     z-index: 1000;
+    text-align: center;
   }
 
   .nav.active {
@@ -470,6 +524,7 @@ footer a:hover {
   .nav a::after {
     display: none;
   }
+
 
   /* === FORMULAIRE DE CONTACT === */
   .contact-container {
@@ -604,34 +659,54 @@ footer a:hover {
 ========================== */
 @media (max-width: 480px) {
 
+  /* === HEADER === */
   #h1Header {
-    font-size: 1.3rem;
-    line-height: 1.4;
+    font-size: 1.4rem;              /* ✏️ un peu plus grand pour une meilleure lisibilité */
+    line-height: 1.3;               /* 📏 réduit légèrement pour ne pas trop étirer */
     text-align: center;
-    max-width: 90%;
-    margin: 0 auto;
+    max-width: 95%;                 /* 📐 plus de largeur pour éviter les retours à la ligne */
+    margin: 0 auto 12px;            /* 📍 ajoute un petit espace sous le titre */
+    word-break: break-word;         /* ✅ évite les débordements si le texte est long */
   }
 
+  /* === CONTAINER DU FORMULAIRE === */
   .contact-container {
-    padding: 100px 15px 40px;
+    padding: 90px 15px 40px;        /* 📏 réduit légèrement l’espace pour mieux centrer */
   }
 
+  /* === TITRE DU FORMULAIRE === */
   .contact-title {
-    font-size: 1.6rem;
-    margin-bottom: 25px;
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+    line-height: 1.3;
+    text-align: center;
   }
 
+  /* === BOÎTE DE CONTACT === */
   .contact-box {
-    padding: 15px;
+    padding: 18px;
+    border-radius: 16px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15); /* ✨ effet plus doux */
   }
 
+  /* === CHAMPS DE FORMULAIRE === */
   .contact-box input,
   .contact-box textarea {
-    font-size: 0.95rem;
+    font-size: 1rem;                /* 📐 légèrement plus grand pour lisibilité tactile */
+    padding: 12px 14px;
   }
 
+  .contact-box textarea {
+    min-height: 110px;             /* ✏️ un peu moins haut pour éviter trop de scroll */
+  }
+
+  /* === BOUTON ENVOYER === */
   .btn-submit {
-    padding: 12px;
-    font-size: 0.95rem;
+    padding: 14px;
+    font-size: 1rem;
+    border-radius: 25px;
+    width: 100%;
+    margin-top: 10px;
   }
 }
+
