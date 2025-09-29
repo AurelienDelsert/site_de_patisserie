@@ -357,6 +357,11 @@ footer a:hover {
   header { padding: 15px 20px; }
   .burger { display: flex; }
 
+  #h1Contenu {
+  margin-bottom: 30px;
+  text-align: center;
+  }
+
   .nav {
     position: absolute;
     top: 100%;
@@ -381,6 +386,37 @@ footer a:hover {
 
   .footer-container { flex-direction: column; text-align: center; }
   .socials { justify-content: center; }
+
+  /* --- Présentation sur mobile --- */
+  .about-section {
+  flex-direction: column;
+  padding: 20px;
+  text-align: center;
+  }
+
+  .card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  max-width: 500px; /* 👈 évite qu'elle devienne trop large */
+  margin: 0 auto;
+  padding: 30px 20px;
+  }
+
+  .about-image img {
+    max-width: 180px; /* 👈 ajuste la taille de la photo sur mobile */
+    margin-bottom: 20px;
+  }
+
+  .about-text {
+    width: 100%;
+    text-align: center;
+  }
+
+  .about-text p {
+    text-align: center; /* 👈 centre les paragraphes */
+  }
 }
 
 /* Très petits écrans */
