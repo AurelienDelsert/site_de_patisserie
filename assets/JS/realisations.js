@@ -17,7 +17,11 @@ document.addEventListener("DOMContentLoaded", () => {
       }
 
       document.getElementById("modalTitle").textContent = title;
-      document.getElementById("modalRecipe").textContent = recipe;
+      document.getElementById("modalRecipe").innerHTML = recipe
+        .replace(/&lt;/g, "<")
+        .replace(/&gt;/g, ">")
+        .replace(/&amp;/g, "&");
+
 
       const inner = document.getElementById("carouselInner");
       inner.innerHTML = "";
