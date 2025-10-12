@@ -54,13 +54,13 @@ document.addEventListener("DOMContentLoaded", () => {
       e.preventDefault();
 
       // 📨 Envoi du mail à Lorie (toi)
-      emailjs.sendForm("service_adntey2", "template_ulx1ihr", form)
+      emailjs.sendForm("service_adntey2", "template_94ha4qn", form)
         .then(() => {
           // 💌 Envoi du mail automatique de remerciement au client
           const userEmail = form.querySelector('input[name="email"]').value;
           const userName = form.querySelector('input[name="name"]').value;
 
-          emailjs.send("service_adntey2", "template_autoreponse_lorie", {
+          emailjs.send("service_adntey2", "template_yudyqfh", {
             name: userName,
             email: userEmail
           });
@@ -70,7 +70,7 @@ document.addEventListener("DOMContentLoaded", () => {
         })
         .catch((error) => {
           console.error("Erreur EmailJS :", error);
-          alert("Erreur : le message n’a pas pu être envoyé 😢");
+          alert("Erreur : le message n’a pas pu être envoyé 😢\n" + JSON.stringify(error));
         });
     });
   }
