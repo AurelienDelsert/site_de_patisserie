@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Nouveau message - L'univers de Lorie</title>
+  <title>Merci pour votre message - L'univers de Lorie</title>
   <style>
     body {
       background-color: #fff8f9;
@@ -34,30 +34,33 @@
 
     .content {
       padding: 28px 30px;
-      line-height: 1.6;
+      line-height: 1.7;
       font-size: 16px;
+      text-align: center;
     }
 
     .content h2 {
       font-family: 'Playfair Display', serif;
       color: #6b4226;
-      font-size: 20px;
-      margin-bottom: 16px;
-      text-align: center;
+      font-size: 22px;
+      margin-bottom: 18px;
     }
 
-    .info-block {
-      background: #fff8f9;
-      border-left: 4px solid #f8c8dc;
-      padding: 10px 16px;
-      margin-bottom: 12px;
-      border-radius: 6px;
-    }
-
-    .info-block strong {
-      color: #6b4226;
+    .btn-site {
       display: inline-block;
-      width: 120px;
+      background: linear-gradient(135deg, #f8c8dc, #d4a373);
+      color: #fff;
+      text-decoration: none;
+      padding: 12px 28px;
+      border-radius: 30px;
+      font-weight: bold;
+      margin-top: 20px;
+      transition: all 0.3s ease;
+    }
+
+    .btn-site:hover {
+      background: linear-gradient(135deg, #d4a373, #f8c8dc);
+      transform: translateY(-2px);
     }
 
     .footer {
@@ -83,22 +86,30 @@
     </div>
 
     <div class="content">
-      <h2>📬 Nouveau message reçu</h2>
+      <h2>Merci pour votre message 💕</h2>
+      <p>Bonjour,</p>
+      <p>
+        Je vous remercie sincèrement d’avoir pris le temps de m’écrire 💌  
+        Votre message a bien été reçu et je vous répondrai personnellement dans les plus brefs délais.
+      </p>
+      <p>
+        Chaque pâtisserie que je réalise est faite avec <strong>passion, patience et gourmandise</strong>.  
+        En attendant ma réponse, je vous invite à découvrir mes dernières créations sucrées :
+      </p>
 
-      <div class="info-block">
-        <strong>Nom :</strong> {{Nom}}
-      </div>
-      <div class="info-block">
-        <strong>Email :</strong> {{Adresse e-mail}}
-      </div>
-      <div class="info-block">
-        <strong>Message :</strong><br>
-        {{Message}}
-      </div>
+      <a href="https://aureliendelsert.github.io/site_de_patisserie/realisations.html" class="btn-site">
+        🍪 Voir mes réalisations
+      </a>
+
+      <p style="margin-top: 25px;">
+        À très bientôt,<br>
+        <strong>Lorie Depoot</strong><br>
+        <em><i class="bi bi-stars"></i> Passionnée de pâtisserie <i class="bi bi-stars"></i></em>
+      </p>
     </div>
 
     <div class="footer">
-      Cet e-mail provient du formulaire de contact de <strong>L'univers de Lorie</strong>.<br>
+      Ce message vous a été envoyé automatiquement par <strong>L'univers de Lorie</strong>.<br>
       🌸 Merci de ne pas y répondre directement.<br><br>
       <a href="https://aureliendelsert.github.io/site_de_patisserie/">Visiter le site</a>
     </div>
