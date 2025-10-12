@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Nouveau message - L'univers de Lorie</title>
+  <style>
+    body {
+      background-color: #fff8f9;
+      font-family: 'Arial', sans-serif;
+      color: #3a2e2a;
+      margin: 0;
+      padding: 0;
+    }
+
+    .email-container {
+      max-width: 600px;
+      margin: 40px auto;
+      background: #ffffff;
+      border-radius: 16px;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+      overflow: hidden;
+      border: 2px solid #f8c8dc;
+    }
+
+    .header {
+      background: linear-gradient(135deg, #f8c8dc, #d4a373);
+      color: #fff;
+      text-align: center;
+      padding: 24px;
+      font-family: 'Pacifico', cursive;
+      font-size: 24px;
+    }
+
+    .content {
+      padding: 28px 30px;
+      line-height: 1.6;
+      font-size: 16px;
+    }
+
+    .content h2 {
+      font-family: 'Playfair Display', serif;
+      color: #6b4226;
+      font-size: 20px;
+      margin-bottom: 16px;
+      text-align: center;
+    }
+
+    .info-block {
+      background: #fff8f9;
+      border-left: 4px solid #f8c8dc;
+      padding: 10px 16px;
+      margin-bottom: 12px;
+      border-radius: 6px;
+    }
+
+    .info-block strong {
+      color: #6b4226;
+      display: inline-block;
+      width: 120px;
+    }
+
+    .footer {
+      background: #fff3f5;
+      text-align: center;
+      padding: 18px;
+      font-size: 14px;
+      color: #6b4226;
+      border-top: 1px solid rgba(0, 0, 0, 0.05);
+    }
+
+    .footer a {
+      color: #d9885b;
+      text-decoration: none;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+  <div class="email-container">
+    <div class="header">
+      🍰 L'univers de Lorie
+    </div>
+
+    <div class="content">
+      <h2>📬 Nouveau message reçu</h2>
+
+      <div class="info-block">
+        <strong>Nom :</strong> {{Nom}}
+      </div>
+      <div class="info-block">
+        <strong>Email :</strong> {{Adresse e-mail}}
+      </div>
+      <div class="info-block">
+        <strong>Message :</strong><br>
+        {{Message}}
+      </div>
+    </div>
+
+    <div class="footer">
+      Cet e-mail provient du formulaire de contact de <strong>L'univers de Lorie</strong>.<br>
+      🌸 Merci de ne pas y répondre directement.<br><br>
+      <a href="https://loriedepoot.github.io/univers-de-lorie/">Visiter le site</a>
+    </div>
+  </div>
+</body>
+</html>

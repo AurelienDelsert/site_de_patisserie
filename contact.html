@@ -49,7 +49,7 @@
 
       <!-- ✅ Boîte du formulaire -->
       <div class="contact-box">
-        <form class="contact-form">
+        <form class="contact-form" action="https://formsubmit.co/delsertaurelien@gmail.com" method="POST">
           <h2>🍩 Envoyez-moi un message 🍰</h2>
           <p class="form-intro">Une question, une envie sucrée ? Remplissez ce petit formulaire ✉️</p>
 
@@ -80,6 +80,13 @@
           <button type="submit" class="btn-submit">
             <i class="bi bi-send-fill"></i> Envoyer mon message
           </button>
+
+          <input type="hidden" name="_next" value="https://aureliendelsert.github.io/site_de_patisserie/merci.html">
+          <input type="hidden" name="_captcha" value="false">
+          <input type="hidden" name="_subject" value="📬 Nouveau message depuis le site L'univers de Lorie">
+          <input type="hidden" name="_template" value="https://aureliendelsert.github.io/site_de_patisserie/templates/email.html">
+          <input type="hidden" name="_autoresponse" value="Merci pour votre message ! Je vous répondrai très bientôt 🍰">
+
         </form>
 
       </div>
