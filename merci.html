@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Merci pour votre message – L'univers de Lorie</title>
+
+  <!-- Bootstrap & Icônes -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" />
+
+  <!-- Polices -->
+  <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Playfair+Display:wght@600&display=swap" rel="stylesheet" />
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="assets/CSS/style.css" />
+
+  <style>
+    /* ======== ANIMATION PAGE MERCI ======== */
+    body {
+      animation: fadeInPage 1.2s ease forwards;
+    }
+
+    @keyframes fadeInPage {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* ======== SECTION MERCI ======== */
+    .merci-section {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      padding: 160px 20px 80px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .merci-card {
+      background: rgba(255, 255, 255, 0.9);
+      backdrop-filter: blur(10px);
+      border-radius: 25px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+      padding: 60px 40px;
+      max-width: 650px;
+      width: 90%;
+      z-index: 2;
+      animation: fadeUp 1s ease forwards;
+    }
+
+    .merci-card h2 {
+      font-family: 'Pacifico', cursive;
+      color: #6b4226;
+      font-size: 2.2rem;
+      margin-bottom: 15px;
+    }
+
+    .merci-card p {
+      font-size: 1.1rem;
+      color: #3a2e2a;
+      line-height: 1.8;
+    }
+
+    .merci-buttons {
+      margin-top: 35px;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 15px;
+    }
+
+    .merci-buttons a {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      background: linear-gradient(135deg, #f8c8dc, #d4a373);
+      color: #6b4226;
+      padding: 14px 40px;
+      border-radius: 30px;
+      font-weight: bold;
+      text-decoration: none;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+      transition: all 0.3s ease;
+    }
+
+    .merci-buttons a:hover {
+      background: linear-gradient(135deg, #d4a373, #f8c8dc);
+      transform: translateY(-3px) scale(1.05);
+    }
+
+    /* ======== CONFETTIS ======== */
+    .confetti {
+      position: absolute;
+      top: -10px;
+      width: 10px;
+      height: 10px;
+      background: var(--color);
+      opacity: 0.8;
+      border-radius: 50%;
+      animation: fall linear forwards;
+    }
+
+    @keyframes fall {
+      to {
+        transform: translateY(110vh) rotate(720deg);
+        opacity: 0;
+      }
+    }
+
+    /* ======== RESPONSIVE ======== */
+    @media (max-width: 768px) {
+      .merci-card {
+        padding: 40px 25px;
+      }
+      .merci-card h2 {
+        font-size: 1.8rem;
+      }
+      .merci-card p {
+        font-size: 1rem;
+      }
+      .merci-buttons a {
+        padding: 12px 30px;
+        font-size: 0.95rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="main-wrapper">
+
+    <!-- HEADER -->
+    <header>
+      <div class="header-content">
+        <h1 id="h1Header">
+          <i class="bi bi-cupcake-fill"></i><i class="bi bi-stars"></i> 
+          L'univers de Lorie 
+          <i class="bi bi-stars"></i>
+        </h1>
+
+        <div class="burger" id="burgerBtn" aria-label="Menu mobile" role="button" tabindex="0">
+          <span></span><span></span><span></span>
+        </div>
+
+        <nav class="nav" id="navMenu">
+          <a href="index.html">Accueil</a>
+          <a href="realisations.html">Réalisations</a>
+          <a href="contact.html">Contact</a>
+        </nav>
+      </div>
+    </header>
+
+    <!-- CONTENU PRINCIPAL -->
+    <main class="merci-section">
+      <div class="merci-card">
+        <h2><i class="bi bi-envelope-heart"></i> Merci pour votre message 🎉</h2>
+        <p>
+          Votre message a bien été envoyé.<br>
+          Je vous répondrai très bientôt avec plaisir 💌
+        </p>
+
+        <div class="merci-buttons">
+          <a href="index.html"><i class="bi bi-house-heart"></i> Retour à l’accueil</a>
+          <a href="realisations.html"><i class="bi bi-cookie"></i> Voir mes réalisations</a>
+        </div>
+      </div>
+    </main>
+
+    <!-- FOOTER -->
+    <footer>
+      <div class="footer-container">
+        <div class="footer-about">
+          <h3>À propos</h3>
+          <p>Bienvenue dans l'univers de Lorie, où chaque pâtisserie est faite avec passion et gourmandise.</p>
+        </div>
+
+        <div class="footer-links">
+          <h3>Liens utiles</h3>
+          <ul>
+            <li><a href="index.html">Accueil</a></li>
+            <li><a href="realisations.html">Réalisations</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-contact">
+          <h3>Contact</h3>
+          <p>Email : <a href="mailto:loriedepoot@gmail.com">loriedepoot@gmail.com</a></p>
+          <p>Téléphone : 07.71.55.04.45</p>
+          <div class="socials">
+            <a href="#"><i class="bi bi-facebook"></i></a>
+            <a href="#"><i class="bi bi-instagram"></i></a>
+            <a href="#"><i class="bi bi-twitter"></i></a>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>© 2025 L'univers de Lorie - Tous droits réservés</p>
+      </div>
+    </footer>
+  </div>
+
+  <!-- JS -->
+  <script src="assets/JS/script.js"></script>
+
+  <!-- 🎊 Script confettis -->
+  <script>
+    const colors = ["#f8c8dc", "#d4a373", "#ffdfba", "#ffd6e0", "#fff5b7", "#c4e0e5"];
+
+    function createConfetti() {
+      const confetti = document.createElement("div");
+      confetti.classList.add("confetti");
+      confetti.style.left = Math.random() * 100 + "vw";
+      confetti.style.animationDuration = 3 + Math.random() * 3 + "s";
+      confetti.style.setProperty("--color", colors[Math.floor(Math.random() * colors.length)]);
+      document.body.appendChild(confetti);
+
+      setTimeout(() => confetti.remove(), 6000);
+    }
+
+    // Lancer les confettis
+    setInterval(createConfetti, 180);
+  </script>
+
+</body>
+</html>
