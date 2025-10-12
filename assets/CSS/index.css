@@ -12,7 +12,7 @@ html, body {
   font-family: 'Arial', sans-serif;
   display: flex;
   flex-direction: column;
-  background: url("images/image fond patisserie.jpg") no-repeat center top;
+  background-image: url("assets/Images/fond_site/fond_patisserie.jpg") no-repeat center top;
   background-size: cover;
   background-attachment: scroll; /* 👈 fond qui suit le défilement */
   color: #3a2e2a;
