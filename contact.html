@@ -43,26 +43,21 @@
 
   <!-- MAIN -->
   <main>
-
-    <!-- ✅ Section principale -->
     <section class="contact-section">
-
-      <!-- ✅ Boîte du formulaire -->
       <div class="contact-box">
-        <form class="contact-form" action="https://formsubmit.co/delsertaurelien@gmail.com" method="POST">
-
+        <form id="contact-form" class="contact-form">
           <h2>🍩 Envoyez-moi un message 🍰</h2>
           <p class="form-intro">Une question, une envie sucrée ? Remplissez ce petit formulaire ✉️</p>
 
           <div class="group">
             <i class="bi bi-person-fill"></i>
-            <input type="text" name="name" required />
+            <input type="text" name="from_name" required />
             <label>Nom*</label>
           </div>
 
           <div class="group">
             <i class="bi bi-envelope-fill"></i>
-            <input type="email" name="email" required />
+            <input type="email" name="reply_to" required />
             <label>Email*</label>
           </div>
 
@@ -81,23 +76,7 @@
           <button type="submit" class="btn-submit">
             <i class="bi bi-send-fill"></i> Envoyer mon message
           </button>
-
-          <!-- ✅ Redirection après envoi -->
-          <input type="hidden" name="_next" value="https://aureliendelsert.github.io/site_de_patisserie/merci.html">
-
-          <!-- ✅ Désactiver Captcha -->
-          <input type="hidden" name="_captcha" value="false">
-
-          <!-- ✅ Sujet de ton mail -->
-          <input type="hidden" name="_subject" value="📬 Nouveau message depuis le site L'univers de Lorie">
-
-          <!-- ✅ Message d’auto-réponse pour le client -->
-          <input type="hidden" name="_autoresponse" value="https://aureliendelsert.github.io/site_de_patisserie/assets/templates/autoresponse.html">
-
         </form>
-
-
-
       </div>
     </section>
   </main>
@@ -137,7 +116,9 @@
     </div>
   </footer>
 
+  <!-- ✅ NOUVELLE VERSION EMAILJS (v4) -->
   <script src="assets/JS/script.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
   <script src="assets/JS/contact.js"></script>
 
 </body>
