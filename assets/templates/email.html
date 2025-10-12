@@ -6,102 +6,65 @@
   <title>Nouveau message - L'univers de Lorie</title>
   <style>
     body {
-      background-color: #fff8f9;
       font-family: 'Arial', sans-serif;
-      color: #3a2e2a;
+      background-color: #fff7f9;
       margin: 0;
       padding: 0;
     }
-
     .email-container {
       max-width: 600px;
-      margin: 40px auto;
+      margin: 30px auto;
       background: #ffffff;
       border-radius: 16px;
-      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+      box-shadow: 0 8px 20px rgba(0,0,0,0.1);
       overflow: hidden;
-      border: 2px solid #f8c8dc;
     }
-
-    .header {
+    .email-header {
       background: linear-gradient(135deg, #f8c8dc, #d4a373);
-      color: #fff;
+      color: #6b4226;
       text-align: center;
-      padding: 24px;
-      font-family: 'Pacifico', cursive;
-      font-size: 24px;
-    }
-
-    .content {
-      padding: 28px 30px;
-      line-height: 1.6;
-      font-size: 16px;
-    }
-
-    .content h2 {
+      padding: 25px;
       font-family: 'Playfair Display', serif;
-      color: #6b4226;
-      font-size: 20px;
-      margin-bottom: 16px;
-      text-align: center;
+      font-size: 1.8rem;
+      font-weight: bold;
     }
-
-    .info-block {
-      background: #fff8f9;
-      border-left: 4px solid #f8c8dc;
-      padding: 10px 16px;
+    .email-body {
+      padding: 30px 25px;
+      color: #3a2e2a;
+      line-height: 1.6;
+    }
+    .email-body p {
       margin-bottom: 12px;
-      border-radius: 6px;
+      font-size: 1rem;
     }
-
-    .info-block strong {
-      color: #6b4226;
-      display: inline-block;
-      width: 120px;
+    .email-body strong {
+      color: #d9885b;
     }
-
-    .footer {
-      background: #fff3f5;
+    .email-footer {
+      background: #fff4f7;
       text-align: center;
       padding: 18px;
-      font-size: 14px;
+      font-size: 0.9rem;
       color: #6b4226;
-      border-top: 1px solid rgba(0, 0, 0, 0.05);
-    }
-
-    .footer a {
-      color: #d9885b;
-      text-decoration: none;
-      font-weight: bold;
+      border-top: 1px solid #f1d3d9;
     }
   </style>
 </head>
 <body>
+
   <div class="email-container">
-    <div class="header">
-      🍰 L'univers de Lorie
+    <div class="email-header">🍰 Nouveau message reçu</div>
+    <div class="email-body">
+      <p><strong>Nom :</strong> {{name}}</p>
+      <p><strong>Email :</strong> {{email}}</p>
+      <p><strong>Téléphone :</strong> {{phone}}</p>
+      <p><strong>Message :</strong><br>{{message}}</p>
     </div>
-
-    <div class="content">
-      <h2>📬 Nouveau message reçu</h2>
-
-      <div class="info-block">
-        <strong>Nom :</strong> {{Nom}}
-      </div>
-      <div class="info-block">
-        <strong>Email :</strong> {{Adresse e-mail}}
-      </div>
-      <div class="info-block">
-        <strong>Message :</strong><br>
-        {{Message}}
-      </div>
-    </div>
-
-    <div class="footer">
-      Cet e-mail provient du formulaire de contact de <strong>L'univers de Lorie</strong>.<br>
-      🌸 Merci de ne pas y répondre directement.<br><br>
-      <a href="https://aureliendelsert.github.io/site_de_patisserie/">Visiter le site</a>
+    <div class="email-footer">
+      L'univers de Lorie ✨<br>
+      <a href="https://aureliendelsert.github.io/site_de_patisserie/" style="color:#d9885b; text-decoration:none;">Visiter le site</a>
     </div>
   </div>
+
 </body>
 </html>

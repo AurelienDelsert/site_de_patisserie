@@ -3,116 +3,91 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Merci pour votre message - L'univers de Lorie</title>
+  <title>Merci pour votre message 💌</title>
   <style>
     body {
-      background-color: #fff8f9;
       font-family: 'Arial', sans-serif;
-      color: #3a2e2a;
+      background-color: #fff7f9;
       margin: 0;
       padding: 0;
     }
-
     .email-container {
       max-width: 600px;
-      margin: 40px auto;
+      margin: 30px auto;
       background: #ffffff;
-      border-radius: 16px;
-      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+      border-radius: 18px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.1);
       overflow: hidden;
-      border: 2px solid #f8c8dc;
     }
-
-    .header {
+    .email-header {
       background: linear-gradient(135deg, #f8c8dc, #d4a373);
-      color: #fff;
-      text-align: center;
-      padding: 24px;
-      font-family: 'Pacifico', cursive;
-      font-size: 24px;
-    }
-
-    .content {
-      padding: 28px 30px;
-      line-height: 1.7;
-      font-size: 16px;
-      text-align: center;
-    }
-
-    .content h2 {
-      font-family: 'Playfair Display', serif;
       color: #6b4226;
-      font-size: 22px;
-      margin-bottom: 18px;
+      text-align: center;
+      padding: 25px;
+      font-family: 'Playfair Display', serif;
+      font-size: 1.8rem;
+      font-weight: bold;
     }
-
-    .btn-site {
+    .email-body {
+      padding: 30px 25px;
+      color: #3a2e2a;
+      line-height: 1.7;
+      text-align: center;
+    }
+    .email-body h2 {
+      font-family: 'Pacifico', cursive;
+      color: #d9885b;
+      margin-bottom: 18px;
+      font-size: 1.6rem;
+    }
+    .email-body p {
+      font-size: 1rem;
+      margin-bottom: 14px;
+    }
+    .btn {
       display: inline-block;
       background: linear-gradient(135deg, #f8c8dc, #d4a373);
-      color: #fff;
+      color: #6b4226;
       text-decoration: none;
-      padding: 12px 28px;
-      border-radius: 30px;
       font-weight: bold;
+      padding: 12px 30px;
+      border-radius: 30px;
       margin-top: 20px;
-      transition: all 0.3s ease;
+      transition: 0.3s;
     }
-
-    .btn-site:hover {
+    .btn:hover {
       background: linear-gradient(135deg, #d4a373, #f8c8dc);
-      transform: translateY(-2px);
+      color: #fff;
     }
-
-    .footer {
-      background: #fff3f5;
+    .email-footer {
+      background: #fff4f7;
       text-align: center;
       padding: 18px;
-      font-size: 14px;
+      font-size: 0.9rem;
       color: #6b4226;
-      border-top: 1px solid rgba(0, 0, 0, 0.05);
-    }
-
-    .footer a {
-      color: #d9885b;
-      text-decoration: none;
-      font-weight: bold;
+      border-top: 1px solid #f1d3d9;
     }
   </style>
 </head>
 <body>
+
   <div class="email-container">
-    <div class="header">
-      🍰 L'univers de Lorie
-    </div>
+    <div class="email-header">🍰 L'univers de Lorie</div>
 
-    <div class="content">
+    <div class="email-body">
       <h2>Merci pour votre message 💕</h2>
-      <p>Bonjour,</p>
-      <p>
-        Je vous remercie sincèrement d’avoir pris le temps de m’écrire 💌  
-        Votre message a bien été reçu et je vous répondrai personnellement dans les plus brefs délais.
-      </p>
-      <p>
-        Chaque pâtisserie que je réalise est faite avec <strong>passion, patience et gourmandise</strong>.  
-        En attendant ma réponse, je vous invite à découvrir mes dernières créations sucrées :
-      </p>
-
-      <a href="https://aureliendelsert.github.io/site_de_patisserie/realisations.html" class="btn-site">
-        🍪 Voir mes réalisations
-      </a>
-
-      <p style="margin-top: 25px;">
-        À très bientôt,<br>
-        <strong>Lorie Depoot</strong><br>
-        <em><i class="bi bi-stars"></i> Passionnée de pâtisserie <i class="bi bi-stars"></i></em>
-      </p>
+      <p>Bonjour {{name}},</p>
+      <p>Votre message a bien été reçu par <strong>Lorie</strong> ✨<br>
+      Elle vous répondra très bientôt avec douceur et gourmandise 🧁</p>
+      <p>En attendant, découvrez ses dernières créations pâtissières :</p>
+      <a href="https://aureliendelsert.github.io/site_de_patisserie/realisations.html" class="btn">Voir les réalisations</a>
+      <p>À très vite dans son univers sucré 🍓</p>
     </div>
 
-    <div class="footer">
-      Ce message vous a été envoyé automatiquement par <strong>L'univers de Lorie</strong>.<br>
-      🌸 Merci de ne pas y répondre directement.<br><br>
-      <a href="https://aureliendelsert.github.io/site_de_patisserie/">Visiter le site</a>
+    <div class="email-footer">
+      © 2025 L'univers de Lorie – Pâtisseries artisanales faites avec amour 💖
     </div>
   </div>
+
 </body>
 </html>
