@@ -4,7 +4,7 @@ html, body {
   padding: 0;
 
   /* 🖼️ Image de fond */
-  background-image: url("/assets/Images/fond_site/fond_patisserie.jpg");
+  background-image: url("../Images/fond_site/fond_patisserie.jpg");
   background-position: center center;      /* centrée horizontalement et verticalement */
   background-repeat: no-repeat;            /* pas de répétition */
   background-size: cover;                  /* couvre tout l’écran sans déformation */
