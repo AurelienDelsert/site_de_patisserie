@@ -1,137 +1,9 @@
 /* ==========================
-   RESET & BASE
+   PAGE CONTACT – L’univers de Lorie
+   (CSS spécifique)
 ========================== */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
 
-html, body {
-  font-family: 'Arial', sans-serif;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-
-  /* 🖼️ Fond qui défile avec le scroll */
-  background: url("images/image fond patisserie.jpg") no-repeat center top;
-  background-size: cover;
-  background-attachment: scroll; /* 👈 c’est la clé */
-  background-position: center top;
-  background-repeat: no-repeat;
-
-  color: #3a2e2a;
-  overflow-x: hidden;
-}
-
-
-a {
-  text-decoration: none;
-}
-
-/* ==========================
-   HEADER (identique modèle)
-========================== */
-header {
-  width: 100%;
-  padding: 20px 40px;
-  background: rgba(255, 255, 255, 0.85);
-  backdrop-filter: blur(10px);
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
-  position: fixed;
-  top: 0;
-  left: 0;
-  z-index: 1000;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  gap: 10px;
-}
-
-.header-content {
-  width: 100%;
-  max-width: 1200px;
-  text-align: center;
-}
-
-#h1Header {
-  font-family: 'Pacifico', cursive;
-  font-size: clamp(28px, 5vw, 42px);
-  color: #6b4226;
-  letter-spacing: 1px;
-  transition: color 0.3s ease;
-}
-
-#h1Header:hover {
-  color: #d4a373;
-}
-
-.nav {
-  display: flex;
-  justify-content: center;
-  gap: 30px;
-}
-
-.nav a {
-  position: relative;
-  font-size: 17px;
-  color: #3a2e2a;
-  font-weight: 600;
-  text-decoration: none;
-  padding: 8px 0;
-  transition: color 0.3s ease;
-}
-
-.nav a::after {
-  content: "";
-  position: absolute;
-  bottom: -4px;
-  left: 0;
-  width: 0;
-  height: 2px;
-  background: linear-gradient(135deg, #f8c8dc, #d4a373);
-  transition: width 0.3s ease;
-}
-
-.nav a:hover {
-  color: #d4a373;
-}
-
-.nav a:hover::after {
-  width: 100%;
-}
-
-/* BURGER MENU */
-.burger {
-  display: none;
-  flex-direction: column;
-  gap: 5px;
-  cursor: pointer;
-}
-
-.burger span {
-  width: 28px;
-  height: 3px;
-  background: #6b4226;
-  border-radius: 2px;
-  transition: all 0.3s ease;
-}
-
-/* Effet de survol pour le burger - plus moderne */
-.burger:hover span {
-  background: #d9885b;
-  transform: scaleX(1.1);
-}
-
-
-.burger.active span:nth-child(1) { transform: rotate(45deg) translateY(8px); }
-.burger.active span:nth-child(2) { opacity: 0; }
-.burger.active span:nth-child(3) { transform: rotate(-45deg) translateY(-8px); }
-
-/* ==========================
-   MAIN CONTENT
-========================== */
+/* ----- CONTENU PRINCIPAL ----- */
 main {
   min-height: 100vh;
   padding: 160px 20px 60px;
@@ -246,15 +118,15 @@ main {
   transform: translateY(-3px) scale(1.05);
 }
 
-/* ----- Animation d'apparition ----- */
+/* ----- Apparition fluide ----- */
 .page-title,
 .contact-box,
 .contact-info,
 .contact-section {
   opacity: 0;
   transform: translateY(40px);
-   transition: opacity 0.8s cubic-bezier(0.23, 1, 0.32, 1), 
-               transform 0.8s cubic-bezier(0.23, 1, 0.32, 1);
+  transition: opacity 0.8s cubic-bezier(0.23, 1, 0.32, 1),
+              transform 0.8s cubic-bezier(0.23, 1, 0.32, 1);
 }
 
 .page-title.visible,
@@ -265,145 +137,20 @@ main {
   transform: translateY(0);
 }
 
-/* (Optionnel) effet cascade */
 .page-title.visible { transition-delay: 0.2s; }
 .contact-box.visible { transition-delay: 0.4s; }
 .contact-info.visible { transition-delay: 0.6s; }
 
-
 /* ==========================
-   FOOTER (identique modèle)
+   📲 RESPONSIVE
 ========================== */
-footer {
-  width: 100%;
-  background: rgba(255, 255, 255, 0.85);
-  backdrop-filter: blur(10px);
-  color: #3a2e2a;
-  box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.08);
-  display: flex;
-  flex-direction: column;
-  margin-top: auto;
-  padding: 0;
-}
 
-.footer-container {
-  max-width: 1200px;
-  margin: 0 auto;
-  width: 100%;
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
-  gap: 40px;
-  flex-wrap: wrap;
-  padding: 60px 20px;
-}
-
-.footer-container div {
-  flex: 1 1 250px;
-}
-
-footer h3 {
-  font-size: 20px;
-  margin-bottom: 20px;
-  color: #6b4226;
-  position: relative;
-}
-
-footer h3::after {
-  content: "";
-  display: block;
-  width: 40px;
-  height: 3px;
-  background: linear-gradient(135deg, #f8c8dc, #d4a373);
-  margin-top: 6px;
-  border-radius: 2px;
-}
-
-footer p,
-footer a {
-  color: #3a2e2a;
-  font-size: 15px;
-  line-height: 1.7;
-  text-decoration: none;
-  transition: color 0.3s ease;
-}
-
-footer a:hover {
-  color: #d4a373;
-}
-
-.socials {
-  display: flex;
-  gap: 15px;
-  margin-top: 10px;
-}
-
-.socials a {
-  font-size: 22px;
-  transition: transform 0.3s ease, color 0.3s ease;
-  color: #6b4226;
-}
-
-.socials a:hover {
-  transform: scale(1.2);
-  color: #d4a373;
-}
-
-.footer-bottom {
-  width: 100%;
-  background: rgba(255, 255, 255, 0.85);
-  text-align: center;
-  padding: 18px 20px;
-  font-size: 14px;
-  color: #6b4226;
-  border-top: 1px solid rgba(0, 0, 0, 0.1);
-}
-
-header {
-  animation: fadeDown 0.8s ease forwards;
-}
-
-@keyframes fadeDown {
-  0% {
-    opacity: 0;
-    transform: translateY(-20px);
-  }
-  100% {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-
-/* ==========================
-📲 TABLETTE (769px - 1024px)
-========================== */
+/* TABLETTE */
 @media (max-width: 1024px) and (min-width: 769px) {
-
-  /* HEADER */
-  header {
-    padding: 18px 30px;
-  }
-
-  #h1Header {
-    font-size: 2.2rem;
-  }
-
-  .nav a {
-    font-size: 1.1rem;
-    padding: 10px;
-  }
-
-  /* FORMULAIRE DE CONTACT */
   .contact-container {
     max-width: 700px;
     margin: 0 auto;
     padding: 140px 30px 60px;
-  }
-
-  .contact-title {
-    font-size: 2.2rem;
-    margin-bottom: 40px;
   }
 
   .contact-box {
@@ -417,14 +164,8 @@ header {
     gap: 20px;
   }
 
-  .contact-box input,
   .contact-box textarea {
-    font-size: 1.05rem;
-    padding: 14px 16px;
-  }
-
-  .contact-box textarea {
-    grid-column: 1 / 3; /* le textarea prend toute la largeur */
+    grid-column: 1 / 3;
   }
 
   .btn-submit {
@@ -432,101 +173,10 @@ header {
     font-size: 1.1rem;
     padding: 16px;
   }
-
-  /* FOOTER */
-  .footer-container {
-    padding: 50px 30px;
-  }
-
-  footer h3 {
-    font-size: 1.5rem;
-  }
 }
 
-
-/* ==========================
-📱 SMARTPHONE (≤ 768px)
-========================== */
+/* SMARTPHONE */
 @media (max-width: 768px) {
-
-  /* === HEADER === */
-  header {
-    padding: 12px 20px;
-    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-  }
-
-  .header-content {
-    display: flex;
-    flex-direction: column; /* ✅ colonne pour centrer */
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-    text-align: center;
-  }
-
-  #h1Header {
-    font-size: 1.7rem;
-    text-align: center;
-    max-width: 90%;
-    line-height: 1.3;
-    margin-bottom: 12px; /* espace sous le titre */
-  }
-
-  /* === BURGER sous le titre === */
-  .burger {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    gap: 5px;
-    cursor: pointer;
-    z-index: 1100;
-    margin-bottom: 8px;
-  }
-
-  .burger span {
-    width: 28px;
-    height: 3px;
-    background: #6b4226;
-    border-radius: 2px;
-    transition: all 0.3s ease;
-  }
-
-    /* === MENU MOBILE === */
-  .nav {
-    position: absolute;
-    top: 100%;
-    left: 0;
-    width: 100%;
-    flex-direction: column;
-    align-items: center;
-    background: rgba(255, 255, 255, 0.97);
-    padding: 25px 0;
-    gap: 25px;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
-    transform: translateY(-200%);
-    opacity: 0;
-    transition: all 0.4s ease;
-    z-index: 1000;
-    text-align: center;
-  }
-
-  .nav.active {
-    transform: translateY(0);
-    opacity: 1;
-  }
-
-  .nav a {
-    font-size: 1.2rem;
-    padding: 10px 0;
-  }
-
-  .nav a::after {
-    display: none;
-  }
-
-
-  /* === FORMULAIRE DE CONTACT === */
   .contact-container {
     width: 100%;
     max-width: 500px;
@@ -535,15 +185,8 @@ header {
     text-align: center;
   }
 
-  .contact-title {
-    font-size: 1.9rem;
-    margin-bottom: 30px;
-    line-height: 1.3;
-  }
-
   .contact-box {
     padding: 20px;
-    background: rgba(255, 255, 255, 0.92);
     border-radius: 20px;
     box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
   }
@@ -563,12 +206,6 @@ header {
     border-radius: 12px;
     background: #fff;
     outline: none;
-    transition: border 0.3s ease;
-  }
-
-  .contact-box input:focus,
-  .contact-box textarea:focus {
-    border-color: #d9885b;
   }
 
   .contact-box textarea {
@@ -580,133 +217,35 @@ header {
     width: 100%;
     padding: 14px;
     font-size: 1rem;
-    font-weight: bold;
-    color: #fff;
-    background: linear-gradient(135deg, #f8c8dc, #d4a373);
-    border: none;
-    border-radius: 25px;
-    cursor: pointer;
-    transition: all 0.3s ease;
-  }
-
-  .btn-submit:hover {
-    background: linear-gradient(135deg, #d4a373, #f8c8dc);
-    transform: translateY(-2px);
-  }
-
-  /* === FOOTER === */
-  footer {
-    padding-top: 30px;
-  }
-
-  .footer-container {
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    padding: 40px 20px;
-    gap: 30px;
-  }
-
-  .footer-container div {
-    flex: none;
-    width: 100%;
-    max-width: 400px;
-  }
-
-  footer h3 {
-    font-size: 1.3rem;
-    margin-bottom: 12px;
-  }
-
-  footer p,
-  footer a {
-    font-size: 15px;
-    line-height: 1.6;
-  }
-
-  .footer-links ul {
-    list-style: none;
-    padding: 0;
-  }
-
-  .footer-links li {
-    margin: 8px 0;
-  }
-
-  .socials {
-    justify-content: center;
-    margin-top: 15px;
-  }
-
-  .socials a {
-    font-size: 26px;
-    margin: 0 10px;
-  }
-
-  .footer-container div:not(:last-child) {
-    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
-    padding-bottom: 20px;
-  }
-
-  .footer-bottom {
-    font-size: 13px;
-    padding: 14px 10px;
   }
 }
 
-/* ==========================
-📱 TRÈS PETITS ÉCRANS (≤ 480px)
-========================== */
+/* PETITS TÉLÉPHONES */
 @media (max-width: 480px) {
-
-  /* === HEADER === */
-  #h1Header {
-    font-size: 1.4rem;              /* ✏️ un peu plus grand pour une meilleure lisibilité */
-    line-height: 1.3;               /* 📏 réduit légèrement pour ne pas trop étirer */
-    text-align: center;
-    max-width: 95%;                 /* 📐 plus de largeur pour éviter les retours à la ligne */
-    margin: 0 auto 12px;            /* 📍 ajoute un petit espace sous le titre */
-    word-break: break-word;         /* ✅ évite les débordements si le texte est long */
-  }
-
-  /* === CONTAINER DU FORMULAIRE === */
   .contact-container {
-    padding: 90px 15px 40px;        /* 📏 réduit légèrement l’espace pour mieux centrer */
+    padding: 90px 15px 40px;
   }
 
-  /* === TITRE DU FORMULAIRE === */
-  .contact-title {
-    font-size: 1.5rem;
-    margin-bottom: 20px;
-    line-height: 1.3;
-    text-align: center;
-  }
-
-  /* === BOÎTE DE CONTACT === */
   .contact-box {
     padding: 18px;
     border-radius: 16px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15); /* ✨ effet plus doux */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
   }
 
-  /* === CHAMPS DE FORMULAIRE === */
   .contact-box input,
   .contact-box textarea {
-    font-size: 1rem;                /* 📐 légèrement plus grand pour lisibilité tactile */
+    font-size: 1rem;
     padding: 12px 14px;
   }
 
   .contact-box textarea {
-    min-height: 110px;             /* ✏️ un peu moins haut pour éviter trop de scroll */
+    min-height: 110px;
   }
 
-  /* === BOUTON ENVOYER === */
   .btn-submit {
     padding: 14px;
     font-size: 1rem;
     border-radius: 25px;
-    width: 100%;
     margin-top: 10px;
   }
 }
-
